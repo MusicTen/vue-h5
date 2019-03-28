@@ -8,6 +8,11 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history', // 干掉地址栏里边的#号键
+  // 需要注意的是，当我们启用 history 模式的时候，
+  // 由于我们的项目是一个单页面应用，所以在路由跳转的时候，
+  // 就会出现访问不到静态资源而出现 404 的情况，
+  // 这时候就需要服务端增加一个覆盖所有情况的候选资源：
+  // 如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面
   base: process.env.BASE_URL,
   routes: [
     {

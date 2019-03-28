@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="index">
         <h1>首页</h1>
     </div>
 </template>
@@ -13,5 +13,7 @@ export default {
 }
 </script>
 <style>
-
+    .index {
+        height: 900px;
+    }
 </style>

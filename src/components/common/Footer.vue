@@ -39,10 +39,18 @@ export default {
             ]
         }
     },
+    watch: {
+        $route(to, from) { // 监听路由变化
+            console.log(to.path, from);
+            let currenHash = to.path
+            this.currentIndex = this.tabbar.findIndex((value) => value.path == currenHash)
+        }
+    },
     methods: {
         choose: function(index, path) {
             // console.log(index, path)
             this.currentIndex = index
+            console.log(this.$router)
             this.$router.push({path: path})
         }
     }
