@@ -1,19 +1,23 @@
 <template>
     <div class="header">
-        <div class="title"><img :src="back" @click="goback" alt="返回">vue-app</div>
+        <div class="title"><img v-if="isShow" src="../../assets/back.png" @click="goback" alt="返回">vue-app</div>
     </div>
 </template>
 <script>
 export default {
     name: 'Header',
-    data() {
-        return {
-            back: require('../../assets/back.png'),
+    props: {
+        isShow: {
+            type: Boolean,
+            default: true
         }
+    },
+    data() {
+        return {}
     },
     methods: {
         goback() {
-            console.log(this.$router)
+            // console.log(this.$router)
             this.$router.back(-1)
         }
     }

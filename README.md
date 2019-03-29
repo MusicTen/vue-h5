@@ -1,6 +1,6 @@
 # app-vue
 
-## Project setup
+### Project setup
 ```
 npm install
 ```
@@ -15,15 +15,6 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 ------
 
 ### 问题汇总：
@@ -100,3 +91,66 @@ npm run lint
      return target
    }
    ```
+
+#### 7.vue自定义轮播组件
+
+​	难点在于给每个图片的切换过程添加过渡效果。可尝试使用Vue自带的class钩子，或直接使用css的transition属性，也可以用`setTimeout`方法加递归来实现。如果使用css的`transition`过渡方法，在处理边界的无限滚动上总会在chrome浏览器上有一下闪动，即使添加了`-webkit-transform-style: preserve-3d;`
+
+ 和` -webkit-backface-visibility: hidden;` 也还是没用，而且要配合`transition`的 `transitionend `事件对于IE浏览器的支持也不怎么好。
+
+​	实现思路：首尾各加一张假图，利用css3过渡属性，由于vue中我没法监听过渡完成`transitionend`事件，取巧用延迟来控制图片位置秒切，并设置节流阀。
+
+#### 8.vue 引入公共css文件
+
+​	1、在入口js文件main.js中引入，一些公共的样式文件，可以在这里引入。
+
+```html
+import Vue from 'vue'
+import App from './App' // 引入App这个组件
+import router from './router' /* 引入路由配置 */
+import '../static/css/global.css' /*引入公共样式*/
+```
+
+​	2、在index.html中引入
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>stop</title>
+    <link rel="stylesheet" href="./static/css/global.css"> /*引入公共样式*/
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+```
+
+
+​	3、在app.vue中引入，但是这样引入有一个问题，就是在index.html的HEADH上会多出一个空的`<style></style>`
+
+```html
+<template>
+  <div id="app">
+    <router-view/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app'
+}
+</script>
+
+<style>
+  @import './../static/css/global.css'; /*引入公共样式*/
+</style>
+```
+
+#### 9.`<transition-group>` 组件
+
+- 不同于 `<transition>`，它会以一个真实元素呈现：默认为一个 `<span>`。你也可以通过 `tag` 特性更换为其他元素。
+- [过渡模式]不可用，因为我们不再相互切换特有的元素。
+- 内部元素 **总是需要** 提供唯一的 `key` 属性值。

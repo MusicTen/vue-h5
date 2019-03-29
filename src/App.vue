@@ -1,25 +1,93 @@
 <template>
-  <div id="app">
-    <Header></Header>
-    <router-view/>
-    <Footer></Footer>
-  </div>
+    <div id="app">
+        <transition :name="transitionName">
+            <router-view/>
+        </transition>
+    </div>
 </template>
 <script>
-import Header from './components/common/Header'
-import Footer from './components/common/Footer'
 export default {
-  name: 'app',
-  components: {
-    Header,
-    Footer
-  }
+    name: 'app',
+    data() {
+        return {
+            transitionName: 'slide-left'
+        }
+    },
+    
+    watch: {
+        $route() { // vue路由切换过渡效果
+            let isBack = this.$router.isBack
+            if (isBack) {
+                this.transitionName = 'slide-right'
+            } else {
+                this.transitionName = 'slide-left'
+            }
+            this.$router.isBack = false
+        }
+    },
 }
 </script>
 
 <style lang="scss">
-#app {
-  width: 100%;
-  height: 100%;
-}
+    #app {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translate3d(100%, 0, 0);
+            opacity: 1;
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideInRight {
+        from {
+            transform: translate3d(-100%, 0, 0);
+            opacity: 1;
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideLeftOut {
+        from {
+            transform: translate3d(0, 0, 0);
+            opacity: 0;
+        }
+        to {
+            transform: translate3d(100%, 0, 0);
+            opacity: 0;
+        }
+    }
+    @keyframes slideRightOut {
+        from {
+            transform: translate3d(0, 0, 0);
+            opacity: 0;
+        }
+        to {
+            transform: translate3d(-100%, 0, 0);
+            opacity: 0;
+        }
+    } 
+    .slide-left-enter-active {
+        animation: slideInLeft .3s forwards;
+        z-index: 5;
+    }
+    .slide-left-leave-active {
+        animation: slideLeftOut .3s forwards;
+        z-index: 3;
+    }
+    .slide-right-enter-active {
+        animation: slideInRight .3s forwards;
+        z-index: 5;
+    }
+    .slide-right-leave-active {
+        animation: slideRightOut .3s forwards;
+        z-index: 3;
+    }
 </style>

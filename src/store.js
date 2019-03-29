@@ -4,13 +4,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+    state: {
+        windowWidth: window.screen.width,
+        windowHeight: window.screen.height,
+    },
+    mutations: {
 
-  },
-  mutations: {
+    },
+    actions: {
 
-  },
-  actions: {
-
-  }
+    }
 })

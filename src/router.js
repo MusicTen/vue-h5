@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Index from './views/Index.vue'
 import Home from '@/views/Home.vue' // '@/'--相对路径(简写)
 import List from './views/List.vue'
+import Search from './views/Search.vue'
+import NoFind from './views/NoFind.vue'
 
 Vue.use(Router)
 
@@ -29,14 +31,24 @@ export default new Router({
       component: () => import(/* webpackChunkName: "news" */ './views/News.vue')
     },
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
     {
-      path: '/',
+      path: '/list',
       name: 'list',
       component: List
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
+      path: '*',
+      name: 'nofind',
+      component: NoFind
     },
   ]
 })
