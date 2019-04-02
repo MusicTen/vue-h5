@@ -19,7 +19,7 @@ npm run build
 
 ### 问题汇总：
 
-#### 1.子组件图片路径问题
+#### 1. 子组件图片路径问题
 
 ​	首先图片路径 imgPath 有二种写法： 
 ​	一，如果图片是在 assets 文件夹下面的话，需要在路径前面加上 require 函数才行，否则 webpack 会识别不了路径报错
@@ -32,27 +32,27 @@ npm run build
 "imgPath": "../../../static/logo.png"，
 ```
 
-#### 2.路由跳转的三种方式
+#### 2. 路由跳转的三种方式
 
 - <router-link to='需要跳转到的页面的路径> 浏览器在解析时，将它解析成一个类似于`<a>` 的标签。
 - this.$router.push({ path:’/user’})
 - this.$router.replace{path：‘/’ }
 
-#### 3.\$route和$router的区别
+#### 3. \$route和$router的区别
 
 - `$router` 为 `VueRouter` 实例，想要导航到不同 `URL`，则使用 `$router.push` 方法
 
 - `$route` 为当前 `router` 跳转对象里面可以获取 `name` 、 `path` 、 `query` 、 `params` 等
 
-#### 4.NextTick 是做什么的
+#### 4. NextTick 是做什么的
 
 ​	`$nextTick` 是在下次 `DOM` 更新循环结束之后执行延迟回调，在修改数据之后使用 `$nextTick`，则可以在回调中获取更新后的 `DOM`
 
-#### 5.Vue 组件 data 为什么必须是函数
+#### 5. Vue 组件 data 为什么必须是函数
 
 ​	因为js本身的特性带来的，如果 `data` 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 `data` 作为一个函数返回一个对象，那么每一个实例的 `data` 属性都是独立的，不会相互影响了
 
-#### 6.深拷贝与浅拷贝
+#### 6. 深拷贝与浅拷贝
 
 - 浅拷贝
 
@@ -69,10 +69,12 @@ npm run build
 
 2. 遍历实现属性复制
 
-   既然浅拷贝只能实现非`object`第一层属性的复制，那么遇到`object`只需要通过递归实现浅拷贝其中内部的属性即可：
+   方法一：
+
+   ​	既然浅拷贝只能实现非`object`第一层属性的复制，那么遇到`object`只需要通过递归实现浅拷贝其中内部的属性即可：
 
    ```javascript
-   function extend (source) {
+   function extend(source) {
      var target
      if (typeof source === 'object') {
        target = Array.isArray(source) ? [] : {}
@@ -92,7 +94,30 @@ npm run build
    }
    ```
 
-#### 7.vue自定义轮播组件
+   方法二：
+
+   ​	先判断类型，分别克隆，达到了各种数据类型深克隆的实现
+
+   ```javascript
+   function deepClone(obj) {
+     	if (obj === null) return null
+     	if (typeof obj !== 'object') return obj
+     	if (obj.constructor === Date) return new Date(obj)
+     	if (obj.constructor === RegExp) return new RegExp(obj)
+     	const newObj = new obj.constructor () // 保持继承链
+     	for (let key in obj) {
+     		if (obj.hasOwnProperty(key)) { // 不遍历其原型链上的属性
+     			const val = obj[key]
+               // 使用arguments.callee解除与函数名的耦合。
+     			newObj[key] = typeof val === 'object' ? arguments.callee(val) : val
+     		}
+     	}
+     	return newObj
+     }
+   ```
+
+
+#### 7. vue自定义轮播组件
 
 ​	难点在于给每个图片的切换过程添加过渡效果。可尝试使用Vue自带的class钩子，或直接使用css的transition属性，也可以用`setTimeout`方法加递归来实现。如果使用css的`transition`过渡方法，在处理边界的无限滚动上总会在chrome浏览器上有一下闪动，即使添加了`-webkit-transform-style: preserve-3d;`
 
@@ -100,7 +125,7 @@ npm run build
 
 ​	实现思路：首尾各加一张假图，利用css3过渡属性，由于vue中我没法监听过渡完成`transitionend`事件，取巧用延迟来控制图片位置秒切，并设置节流阀。
 
-#### 8.vue 引入公共css文件
+#### 8. vue 引入公共css文件
 
 ​	1、在入口js文件main.js中引入，一些公共的样式文件，可以在这里引入。
 
@@ -154,3 +179,134 @@ export default {
 - 不同于 `<transition>`，它会以一个真实元素呈现：默认为一个 `<span>`。你也可以通过 `tag` 特性更换为其他元素。
 - [过渡模式]不可用，因为我们不再相互切换特有的元素。
 - 内部元素 **总是需要** 提供唯一的 `key` 属性值。
+
+#### 10. vue实现移动端页面切换效果
+
+​	在应用transform属性的时候，fixed定位会变成absolute。页面转换的时候，就变成了相对translation定位。所以如果子页面中有绝对定位的话，移动的过程中页面会变形。当父级元素有transform的元素，子级的fixed的特性将转换成absolute。例如，绝对定位在页面底部的footer组件。
+
+​	页面中用到fixed固定底部面板区域, 但是在vue router动画中会出现位置抖动(因为存在多个不同底部面板, 无法把面板移出transition), 具体就是顶部紧跟着内容高度而不是固定在视图下方, 查了下发现是tansfrom的标准所致。
+
+#### 11. 在vue项目中使用echarts
+
+1. 安装echarts依赖
+
+   ```
+   npm install echarts -S
+   ```
+
+2. 创建图表
+
+- 全局引入
+
+  `main.js`
+
+```javascript
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
+```
+
+​	`text.vue`
+
+```javascript
+<div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+
+export default {
+  name: 'hello',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  mounted(){
+    this.drawLine();
+  },
+  methods: {
+    drawLine(){
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts.init(document.getElementById('myChart'))
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '在Vue中使用echarts' },
+            tooltip: {},
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        });
+    }
+  }
+}
+```
+
+​	注意： 这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用
+
+- 按需引入
+
+  上面全局引入会将所有的echarts图表打包，导致体积过大，所以我觉得最好还是按需引入。
+
+​	`Hello.vue`
+
+```javascript
+// 引入基本模板
+let echarts = require('echarts/lib/echarts')
+// 引入柱状图组件
+require('echarts/lib/chart/bar')
+// 引入提示框和title组件
+require('echarts/lib/component/tooltip')
+require('echarts/lib/component/title')
+export default {
+  name: 'hello',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  mounted() {
+    this.drawLine();
+  },
+  methods: {
+    drawLine() {
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = echarts.init(document.getElementById('myChart'))
+      // 绘制图表
+      myChart.setOption({
+        title: { text: 'ECharts 入门示例' },
+        tooltip: {},
+        xAxis: {
+          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }]
+      });
+    }
+  }
+}
+```
+
+​	这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全。
+
+#### 12.vue/cli3.0处理静态资源
+
+​	静态资源可以通过两种方式进行处理：
+
+- 在 JavaScript 被导入或在 template/CSS 中通过相对路径被引用。这类引用会被 webpack 处理。
+
+- 放置在 `public` 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处理。
+
+  何时使用 `public` 文件夹?
+
+- 你需要在构建输出中指定一个文件的名字。
+
+- 你有上千个图片，需要动态引用它们的路径。
+
+- 有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 `<script>` 标签引入没有别的选择。

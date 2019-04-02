@@ -1,17 +1,19 @@
 <template>
-    <div>
+    <div class="home">
         <Header :isShow="!1"></Header>
-        <h1>home</h1>
-        <Footer :currentIndex="3"></Footer>
+        <Guage></Guage>
+        <Footer :index="3"></Footer>
     </div>
 </template>
 <script>
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import Guage from '@/components/content/guage'
 export default {
     components: {
         Header,
-        Footer
+        Footer,
+        Guage
     },
     data() {
         return {
@@ -20,6 +22,7 @@ export default {
     }
 }
 </script>
-<style>
-
+<style lang="scss" scoped>
+    .home {
+    }
 </style>

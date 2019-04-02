@@ -115,7 +115,7 @@ export default {
             width: 70%;
             height: 32px;
             line-height: 32px;
-            border: 1px solid #999;
+            border: 1px solid rgb(180, 180, 180);
             font-size: 12px;
             border-radius: 20px;
             outline: none;
@@ -135,7 +135,7 @@ export default {
         padding: 0 10px;
         li {
             display: flex;
-            border-bottom: 1px solid rgb(180, 180, 180);
+            border-bottom: 1px solid rgb(214, 214, 214);
             padding: 5px;
             img {
                 width: 100px;
@@ -149,6 +149,7 @@ export default {
                 p {
                     display: flex;
                     justify-content: space-between;
+                    color: #999;
                 }
             }
         }

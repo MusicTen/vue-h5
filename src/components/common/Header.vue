@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="title"><img v-if="isShow" src="../../assets/back.png" @click="goback" alt="返回">vue-app</div>
+        <img v-if="isShow" src="../../assets/back.png" @click="goback" alt="返回">vue-app
     </div>
 </template>
 <script>
@@ -28,24 +28,21 @@ export default {
     .header {
         width: 100%;
         height: 50px;
-        .title {
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            color: #fff;
-            background-color: skyblue;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            img {
-                width: 24px;
-                height: 24px;
-                position: absolute;
-                top: 13px;
-                left: 13px;
-            }
+        line-height: 50px;
+        color: #fff;
+        background-color: skyblue;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        font-size: 20px;
+        img {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 13px;
+            left: 13px;
         }
-        
     }
 </style>

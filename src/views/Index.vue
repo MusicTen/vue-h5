@@ -2,7 +2,7 @@
     <div class="index">
         <Header :isShow="!1"></Header>
         <Slider :imgData="lists"></Slider>
-        <Footer :currentIndex="0"></Footer>
+        <Footer :index="0"></Footer>
     </div>
 </template>
 <script>
@@ -28,8 +28,7 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss" scoped>
     .index {
-        height: 500px;
     }
 </style>

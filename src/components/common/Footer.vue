@@ -9,13 +9,14 @@
 export default {
     name: 'Footer',
     props: {
-        currentIndex: {
+        index: {
             default: 0,
             type: Number,
         }
     },
     data() {
         return {
+            currentIndex: this.index,
             tabbar: [
                 {
                     title: '首页',
@@ -67,6 +68,7 @@ export default {
         width: 100%;
         height: 50px;
         border-top: 1px solid #e4e4e4;
+        background-color: #fff;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -85,6 +87,9 @@ export default {
             img {
                 width: 24px;
                 height: 24px;
+            }
+            span {
+                margin-top: 4px;
             }
         }
         .active {

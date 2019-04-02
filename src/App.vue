@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <transition :name="transitionName">
+        <!-- <transition :name="transitionName"> -->
             <router-view/>
-        </transition>
+        <!-- </transition> -->
     </div>
 </template>
 <script>
@@ -10,12 +10,14 @@ export default {
     name: 'app',
     data() {
         return {
+            tabbar: ['index', 'list', 'news', 'home'],
             transitionName: 'slide-left'
         }
     },
     
     watch: {
         $route() { // vue路由切换过渡效果
+            console.log(this.$router.history.current.name)
             let isBack = this.$router.isBack
             if (isBack) {
                 this.transitionName = 'slide-right'
@@ -32,8 +34,10 @@ export default {
     #app {
         width: 100%;
         height: 100%;
+        padding: 50px 0;
+        // filter: grayscale(100%);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
-
     @keyframes slideInLeft {
         from {
             transform: translate3d(100%, 0, 0);
