@@ -310,3 +310,28 @@ export default {
 - 你有上千个图片，需要动态引用它们的路径。
 
 - 有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 `<script>` 标签引入没有别的选择。
+
+#### 13.引入better-scroll滚动插件，实现区域滚动
+
+1. 初始化better-scroll时，默认是垂直方向（y轴滑动）
+
+   ```javascript
+   this.scroll = new BScroll(this.$refs.wrapper, {})
+   ```
+
+   实现横向区域滚动，需定义`scrollX`为true
+
+   ```javascript
+   this.scroll = new BScroll(this.$refs.wrapper, {
+       startX: 0,
+       click: true,
+       scrollX: true, // 横向滚动
+       scrollY: false, // 忽略竖直方向的滚动
+       eventPassthrough: "vertical"
+   })
+   ```
+
+2. 利用better-scroll 提供的 API--`scrollTo(x, y, time, easing)`实现移动端导航点击自动滑动效果
+
+   **实例调用** -- `this.scroll.scrollTo()`
+

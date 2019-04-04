@@ -1,5 +1,4 @@
-//guage-option.js
-
+// guage-option.js
 export const option = {
     tooltip: {
         formatter: "{a} <br/>{b} : {c}%"

@@ -32,7 +32,7 @@ export default {
                 },
                 {
                     title: '新闻',
-                    path: '/news',
+                    path: '/news/1',
                     icon: require('../../assets/tabbar/news2.png'),
                     iconActive: require('../../assets/tabbar/news1.png')
                 },
@@ -49,7 +49,12 @@ export default {
         $route(to) { // 监听路由变化
             // console.log(to.path);
             let currenHash = to.path
-            this.currentIndex = this.tabbar.findIndex((value) => value.path == currenHash)
+            // 例 /news/1 子路由tabbar状态不变
+            if (currenHash.indexOf('/')> -1) {
+               currenHash = '/' + currenHash.split('/')[1]
+            }
+            console.log(currenHash)
+            this.currentIndex = this.tabbar.findIndex((value) => value.path.includes(currenHash))
         }
     },
     methods: {
