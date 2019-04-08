@@ -1,6 +1,6 @@
 <template>
     <div class="popup" ref="channelList" :style="{height:popupHeight+'px'}">
-        <!-- better-scroll只处理容器的第一个子元素，其他的元素会被忽略，如果里面需要滚动的部分有好几部分。一定要拿一个元素把他包裹起来 -->
+        <!-- better-scroll只处理容器的第一个子元素，其他的元素会被忽略，如果里面需要滚动的部分有好几部分。一定要拿一个元素把它包裹起来 -->
         <div> 
             <div class="title">
                 <span>点击进入频道</span>
@@ -9,16 +9,19 @@
                 <span v-if="!isEdit" class="last" @click="close">×</span>
             </div>
             <ul class="list">
-                <li v-for="item in selected" :key="item.id">{{item.name}}<span v-if="isEdit" @click="del(item.id)">×</span></li>
+                <li v-for="item in selected" :key="item.id" @touchstart="gotouchstart" @touchend="gotouchend">{{item.name}}<span v-if="isEdit" @click="del(item.id)">×</span></li>
+                <li style="height: 0px;visibility: hidden;"></li>
+                <li style="height: 0px;visibility: hidden;"></li>
             </ul>
             <div class="title">
                 <span>点击添加更多频道</span>
             </div>
             <ul class="list">
-                <li v-for="item in unselected" :key="item.id">{{item.name}}</li>
+                <li v-for="item in unselected" :key="item.id" @click="add(item.id)">{{item.name}}</li>
+                <li style="height: 0px;visibility: hidden;"></li>
+                <li style="height: 0px;visibility: hidden;"></li>
             </ul>
         </div>
-        
     </div>
 </template>
 <script>
@@ -27,9 +30,10 @@
         data() {
             return {
                 popupHeight: this.$store.state.windowHeight - 154,
-                selected: this.$store.state.CurrentNavList,
-                // unselected: this.$store.state.NavList,
+                // selected: this.$store.state.CurrentNavList,
+                // unselected: this.$store.getters.unselected,
                 isEdit: false,
+                startT: null
             }
         },
         mounted() {
@@ -43,18 +47,30 @@
             })
         },
         computed: {
-            unselected: function() {
-                let that = this
-                let arr = []
-                var bl = true
-                that.$store.state.CurrentNavList.forEach(s=>{
-                    // var bl = that.$store.state.NavList.some(i=>{i.id == s.id})
-                    // if (bl) {
-                    //     arr.push(s)
-                    // }
-                })
-                return arr
-            } 
+            selected () {
+                return this.$store.state.CurrentNavList
+            },
+            unselected () {
+                return this.$store.getters.unselected
+            },
+            // 转移到store里统一处理
+            // unselected: function() {
+                // let that = this
+                // let arr = []
+                // let bl = null
+                // that.$store.state.NavList.forEach(s=>{
+                //     bl = true
+                //     that.$store.state.CurrentNavList.forEach(i=>{
+                //         if (i.id == s.id) {
+                //             bl = false
+                //         }
+                //     })
+                //     if (bl) {
+                //         arr.push(s)
+                //     }
+                // })
+                // return arr
+            // } 
         },
         methods: {
             eidt () {
@@ -66,8 +82,20 @@
             close () {
                 this.$emit("close"); // $emit的作用就是将事件进行向上派发
             },
+            gotouchstart () {
+                this.startT = new Date()
+            },
+            gotouchend () {
+                if (new Date() - this.startT > 700) {
+                    this.isEdit = true
+                }
+            },
             del (id) {
                 console.log(id)
+                this.$store.commit('del', id)
+            },
+            add (id) {
+                this.$store.commit('add', id)
             }
         }
     }
@@ -135,10 +163,10 @@
         justify-content: space-around;
         padding: 10px;
         box-sizing: border-box;
-        &:after {
-            content: "";
-            flex: 90px;
-        }
+        // &:after {
+        //     content: "";
+        //     flex: 90px;
+        // }
         li {
             width: 90px;
             height: 50px;

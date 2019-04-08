@@ -144,8 +144,36 @@ export default new Vuex.Store({
             },
         ]
     },
-    mutations: {
-
+    getters: { // 可以认为是 store 的计算属性
+        unselected: state => { // 接受 state 作为其第一个参数
+            let arr = []
+            let bl = null
+            state.NavList.forEach(s=>{
+                bl = true
+                state.CurrentNavList.forEach(i=>{
+                    if (i.id == s.id) {
+                        bl = false
+                    }
+                })
+                if (bl) {
+                    arr.push(s)
+                }
+            })
+            return arr
+        } 
+    },
+    mutations: { // mutation 必须是同步函数
+        del (state, id) {
+            state.CurrentNavList = state.CurrentNavList.filter(i => {
+                return i.id !== id
+            })
+        },
+        add (state, id) {
+            let item = state.NavList.filter(i => {
+                return i.id == id
+            })
+            state.CurrentNavList.push(item[0])
+        }
     },
     actions: {
 

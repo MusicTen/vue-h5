@@ -3,8 +3,8 @@
         <Header :isShow="!1"></Header>
         <div class="wrapper" ref="wrapper">
             <ul class="tab-list" ref="tabList">
-                <li class="tab-item" v-for="(item, index) in navList" :key="index" @click="change(item)">
-                    <span class="tab-name" :class="{'active': currentTabIndex == item.id}">{{item.name}}</span>
+                <li class="tab-item" v-for="(item, index) in navList" :key="item.id" @click="change(item)">
+                    <span class="tab-name" :class="{'active': currentTabIndex == index}">{{item.name}}</span>
                 </li>
             </ul>
             <div class="add" @click="add">+</div>
@@ -32,13 +32,17 @@
         },
         data() {
             return {
-                navList: this.$store.state.CurrentNavList,
-                currentTabIndex: 1,
+                // navList: this.$store.state.CurrentNavList,
+                currentTabIndex: 0,
                 routerHeight: this.$store.state.windowHeight - 154,
                 showPopup: false
             }
         },
-        created() {
+        computed: {
+            // 由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态
+            navList () {
+               return this.$store.state.CurrentNavList
+            }
         },
         mounted() {
             // 动态计算
@@ -58,10 +62,16 @@
                 }
             })
         },
+        updated () {
+            // console.log(this.navList)
+            // 数据更新后 重新计算导航栏宽度
+            let width = this.navList.length * 58;
+            this.$refs.tabList.style.width = width + "px";
+        },
         methods: {
             change (item) {
                 if (item !== undefined) {
-                    this.currentTabIndex = item.id
+                    this.currentTabIndex = item.id - 1
                 }
                 // 以下部分编写点击相应的navList item时，渲染的逻辑代码
                 this.$router.replace('/news/' + this.currentTabIndex)
