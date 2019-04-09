@@ -21,7 +21,23 @@
                     </circle-progress>
                 </li>
             </transition-group>
-            <div class="add" @click="add">＋</div>
+            <div class="add1" @click="add">＋
+                <div class="left">
+                    <div class="circle"></div>
+                </div>
+                <div class="right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <!--css实现动态加载圆形进度条-->
+            <div class="add2" @click="add">＋
+                <div class="left">
+                    <div class="circle"></div>
+                </div>
+                <div class="right">
+                    <div class="circle"></div>
+                </div>
+            </div>
         </div>
         <Footer :index="1"></Footer>
     </div>
@@ -207,7 +223,7 @@ export default {
             opacity: 0;
             transform: translateX(30px);
         }
-        .add {
+        .add1 {
             width: 60px;
             height: 60px;
             line-height: 60px;
@@ -219,6 +235,112 @@ export default {
             position: fixed;
             bottom: 70px;
             right: 20px;
+            animation: addAnimate 2s linear infinite;
+            div {
+                width: 30px;
+                height: 60px;
+                position: absolute;
+                top: 0;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .circle {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+            }
+            .left {
+                left: 0;
+                .circle {
+                    left: 0;
+                    border-left: 5px solid skyblue;
+                    border-bottom: 5px solid skyblue;
+                }
+            }
+            .right {
+                right: 0;
+                .circle {
+                    right: 0;
+                    border-top: 5px solid skyblue;
+                    border-right: 5px solid skyblue;
+                }
+            }
+        }
+        @keyframes addAnimate {
+            0% {
+                transform: rotate(360deg)
+            }
+            50% {
+                transform: rotate(180deg)
+            }
+            100% {
+                transform: rotate(0)
+            }
+        }
+        .add2 {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: pink;
+            font-size: 58px;
+            color: #fff;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 150px;
+            right: 20px;
+            div {
+                width: 30px;
+                height: 60px;
+                position: absolute;
+                top: 0;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .circle {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 5px solid transparent; // 必须
+                position: absolute;
+                top: 0;
+            }
+            .left {
+                left: 0;
+                .circle {
+                    left: 0;
+                    border-left: 5px solid skyblue;
+                    border-bottom: 5px solid skyblue;
+                    animation: leftCircle 2s linear infinite;
+                }
+            }
+            .right {
+                right: 0;
+                .circle {
+                    right: 0;
+                    border-top: 5px solid skyblue;
+                    border-right: 5px solid skyblue;
+                    animation: rightCircle 2s linear infinite;
+                }
+            }
+            @keyframes leftCircle {
+                0%, 50% {
+                    transform: rotate(-135deg);
+                }
+                100% {
+                    transform: rotate(45deg);
+                }
+            }
+            @keyframes rightCircle {
+                0% {
+                    transform: rotate(-135deg);
+                }
+                50%, 100% {
+                    transform: rotate(45deg);
+                }
+            }
         }
     }
 </style>

@@ -6,6 +6,7 @@ import List from './views/List.vue'
 import Search from './views/Search.vue'
 import NoFind from './views/NoFind.vue'
 import NavigatorList from './views/NavigatorList.vue'
+import Timeline from './views/Timeline.vue'
 import SlideRender from './components/content/BScroll/GoodsListRender.vue'
 import FormListRender from './components/content/BScroll/GoodsListRender.vue'
 import SimpleScrollDemo from './components/content/BScroll/GoodsListRender.vue'
@@ -86,6 +87,11 @@ export default new Router({
       path: '/navs',
       name: 'navs',
       component: NavigatorList
+    },
+    {
+      path: '/timeline',
+      name: 'timeline',
+      component: Timeline
     }
   ]
 })

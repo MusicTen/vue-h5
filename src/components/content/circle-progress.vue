@@ -1,3 +1,4 @@
+<!-- svg实现动态加载圆形进度条 -->
 <template>
   <div>
     <svg style="transform: rotate(-90deg)" :width="width" :height="width" xmlns="http://www.w3.org/2000/svg">

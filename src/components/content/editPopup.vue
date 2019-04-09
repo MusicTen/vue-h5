@@ -3,7 +3,7 @@
         <!-- better-scroll只处理容器的第一个子元素，其他的元素会被忽略，如果里面需要滚动的部分有好几部分。一定要拿一个元素把它包裹起来 -->
         <div> 
             <div class="title">
-                <span>点击进入频道</span>
+                <span>长按进行编辑</span>
                 <button v-if="!isEdit" @click="eidt">编辑</button>
                 <span v-if="isEdit" class="done" @click="done">完成</span>
                 <span v-if="!isEdit" class="last" @click="close">×</span>
@@ -192,6 +192,7 @@
         }
     }
     ul:nth-child(2) {
+        border-bottom: 10px solid #efeff0;
         li {
             color: #519aff;
         }

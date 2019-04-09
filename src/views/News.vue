@@ -3,8 +3,8 @@
         <Header :isShow="!1"></Header>
         <div class="wrapper" ref="wrapper">
             <ul class="tab-list" ref="tabList">
-                <li class="tab-item" v-for="(item, index) in navList" :key="item.id" @click="change(item)">
-                    <span class="tab-name" :class="{'active': currentTabIndex == index}">{{item.name}}</span>
+                <li class="tab-item" v-for="item in navList" :key="item.id" @click="change(item)">
+                    <span class="tab-name" :class="{'active': currentTabIndex == item.id}">{{item.name}}</span>
                 </li>
             </ul>
             <div class="add" @click="add">+</div>
@@ -33,7 +33,7 @@
         data() {
             return {
                 // navList: this.$store.state.CurrentNavList,
-                currentTabIndex: 0,
+                currentTabIndex: 1,
                 routerHeight: this.$store.state.windowHeight - 154,
                 showPopup: false
             }
@@ -71,7 +71,7 @@
         methods: {
             change (item) {
                 if (item !== undefined) {
-                    this.currentTabIndex = item.id - 1
+                    this.currentTabIndex = item.id
                 }
                 // 以下部分编写点击相应的navList item时，渲染的逻辑代码
                 this.$router.replace('/news/' + this.currentTabIndex)

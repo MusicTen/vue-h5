@@ -83,7 +83,7 @@ npm run build
      }
    ```
 
-#### 2. 子组件图片路径问题
+#### 2. 子组件引入图片路径问题
 
 ​	首先图片路径 imgPath 有二种写法： 
 ​	一、如果图片是在 assets 文件夹下面的话，需要在路径前面加上 require 函数才行，否则 webpack 会识别不了路径报错
@@ -98,7 +98,7 @@ npm run build
 
 #### 3. 路由跳转的三种方式
 
-- <router-link to='需要跳转到的页面的路径> 浏览器在解析时，将它解析成一个类似于`<a>` 的标签。
+- <router-link to='需要跳转到的页面的路径'> 浏览器在解析时，将它解析成一个类似于`<a>` 的标签。
 - this.$router.push({ path:’/user’})
 - this.$router.replace{path：‘/’ }
 
@@ -174,19 +174,33 @@ export default {
 </style>
 ```
 
-#### 9.`<transition-group>` 组件
+#### 9. `<transition-group>` 组件
 
 - 不同于 `<transition>`，它会以一个真实元素呈现：默认为一个 `<span>`。你也可以通过 `tag` 特性更换为其他元素。
 - [过渡模式]不可用，因为我们不再相互切换特有的元素。
 - 内部元素 **总是需要** 提供唯一的 `key` 属性值。
 
-#### 10. vue 实现移动端页面切换效果
+#### 10. 圆形滚动进度条动画效果
+
+- 方法一、css3实现思路：两半圆环交替旋转
+
+​	利用两个矩形来完成这么一个圆形进度条效果，特别注意overflow这条规则，起着关键作用
+
+- 方法二、svg实现--<circle>
+
+​	SVG 是使用 XML 来描述二维图形和绘图程序的语言。
+
+​	SVG 的主要竞争者是 Flash。与 Flash 相比，SVG 最大的优势是与其他标准（比如 XSL 和 DOM）相兼容。而 Flash 则是未开源的私有技术。
+
+​	Internet Explorer9，火狐，谷歌Chrome，Opera和Safari都支持SVG。IE8和早期版本都需要一个插件 - 如Adobe SVG浏览器，这是免费提供的。
+
+#### 11. vue 实现移动端页面切换效果
 
 ​	在应用transform属性的时候，fixed定位会变成absolute。页面转换的时候，就变成了相对translation定位。所以如果子页面中有绝对定位的话，移动的过程中页面会变形。当父级元素有transform的元素，子级的fixed的特性将转换成absolute。例如，绝对定位在页面底部的footer组件。
 
 ​	页面中用到fixed固定底部面板区域, 但是在vue router动画中会出现位置抖动(因为存在多个不同底部面板, 无法把面板移出transition), 具体就是顶部紧跟着内容高度而不是固定在视图下方, 查了下发现是tansfrom的标准所致。
 
-#### 11. 在 vue 项目中使用 echarts
+#### 12. 在 vue 项目中使用 echarts
 
 1. 安装echarts依赖
 
@@ -295,7 +309,7 @@ export default {
 
 ​	这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全。
 
-#### 12. vue/cli3.0 处理静态资源
+#### 13. vue/cli3.0 处理静态资源
 
 ​	静态资源可以通过两种方式进行处理：
 
@@ -311,7 +325,7 @@ export default {
 
 - 有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 `<script>` 标签引入没有别的选择。
 
-#### 13. 引入 better-scroll 滚动插件，实现区域滚动
+#### 14. 引入 better-scroll 滚动插件，实现区域滚动
 
 1. 初始化better-scroll时，默认是垂直方向（y轴滑动）
 
@@ -337,16 +351,16 @@ export default {
 
    **注**：scroll只处理容器的第一个子元素，其他的元素会被忽略，如果里面需要滚动的部分有好几部分。一定要拿一个元素把他包裹起来
 
-#### 14. 移动端 vue 项目解决遮罩层滚动穿透问题
+#### 15. 移动端 vue 项目解决遮罩层滚动穿透问题
 
 1. 当弹框明显小于页面的时候，确保不需要滑动查看内容时，可在最外层的遮盖层添加：`@touchmove.prevent`
 2. 弹框的内容明显长过屏幕，需要弹框内容滑动，主页页面不滑动
 
-#### 15. JS 中 forEach 不能用 break
+#### 16. JS 中 forEach 不能用 break
 
-​	forEach（）无法在所有元素都传递给调用的函数之前终止遍历。也就是说，没有像for循环中使用的相应的break语句。如果要提前终止，必须把forEach（）方法放在一个try块中，并能抛出一个异常。如果forEach（）调用的函数抛出foreach.break异常，循环会提前终止
+​	forEach()无法在所有元素都传递给调用的函数之前终止遍历。也就是说，没有像for循环中使用的相应的break语句。如果要提前终止，必须把forEach()方法放在一个try块中，并能抛出一个异常。如果forEach()调用的函数抛出foreach.break异常，循环会提前终止
 
-#### 16. flex 最后一行左对齐
+#### 17. flex 最后一行左对齐
 
 ​	布局上要求item两端对齐，而且最后一行在列不满的情况下要求左对齐，使用flex的`justify-content: space-between;`实现时发现最后一行不能左对齐，而是两端对齐方式，下图不是项目上想要的效果（不使用flex也可以实现，仅讨论使用flex实现）
 
@@ -367,7 +381,7 @@ ul:after {
  }
 ```
 
-#### 17. 在 Vue 组件中获得 Vuex 状态
+#### 18. 在 Vue 组件中获得 Vuex 状态
 
 ​	由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在**计算属性**中返回某个状态
 
