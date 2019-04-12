@@ -1,6 +1,7 @@
 <template>
     <div class="header">
         <img v-if="isShow" src="../../assets/back.png" @click="goback" alt="返回">vue-app
+        <span>{{['&#x2600;', '&#x263c;', '&#x2601;', '&#x2746;', '&#x2745;', '&#x2745;'][random]}}</span>
     </div>
 </template>
 <script>
@@ -13,7 +14,9 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            random: Math.ceil(Math.random() * 5)
+        }
     },
     methods: {
         goback() {
@@ -43,6 +46,11 @@ export default {
             position: absolute;
             top: 13px;
             left: 13px;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 20px;
         }
     }
 </style>

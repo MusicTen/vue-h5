@@ -12,12 +12,14 @@
                 <li v-for="item in selected" :key="item.id" @touchstart="gotouchstart" @touchend="gotouchend">{{item.name}}<span v-if="isEdit" @click="del(item.id)">×</span></li>
                 <li style="height: 0px;visibility: hidden;"></li>
                 <li style="height: 0px;visibility: hidden;"></li>
+                <li style="height: 0px;visibility: hidden;"></li>
             </ul>
             <div class="title">
                 <span>点击添加更多频道</span>
             </div>
             <ul class="list">
                 <li v-for="item in unselected" :key="item.id" @click="add(item.id)">{{item.name}}</li>
+                <li style="height: 0px;visibility: hidden;"></li>
                 <li style="height: 0px;visibility: hidden;"></li>
                 <li style="height: 0px;visibility: hidden;"></li>
             </ul>

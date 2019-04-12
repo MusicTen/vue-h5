@@ -5,7 +5,7 @@
         <ul class="foods-wrapper">
           <li v-for="(food, index) in foods" :key="index" class="food-item border-1px">
             <div class="icon">
-              <img width="57" height="57" :src="food.icon">
+              <img width="57" height="57" v-lazy="food.icon">
             </div>
             <div class="content">
               <h2 class="name">{{food.name}}</h2>

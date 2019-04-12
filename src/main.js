@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import VueLazyload from 'vue-lazyload'
 import './assets/css/base.css' // 引入基础css文件，重置样式
+
+Vue.use(VueLazyload)
 
 Vue.config.productionTip = false // 作用是阻止vue在启动时生成生产提示
 

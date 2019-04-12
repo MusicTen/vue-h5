@@ -136,7 +136,7 @@ export default {
         li {
             display: flex;
             border-bottom: 1px solid rgb(214, 214, 214);
-            padding: 5px;
+            padding: 10px;
             img {
                 width: 100px;
                 height: 70px;

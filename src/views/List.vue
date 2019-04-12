@@ -1,7 +1,31 @@
 <template>
     <div class="list" :style="'min-height: '+ bodyHeight + 'px'">
         <Header :isShow="!1"></Header>
-        <div class="content">
+        <!-- Displays if datas is not set.
+            Options
+            speed: Number - How many seconds between pulses of the loader.
+            height / width: Number - size of the loader contents.
+            primaryColor: String - The color of the elements.
+            secondaryColor: String - The color of the pulser.
+            animate: Boolean - Whether or not to display the pulser.
+        -->
+        <ContentLoader
+            v-if="!datas"
+            :speed="2"
+            :animate="true">
+        </ContentLoader>
+        <FacebookLoader
+            v-if="!datas"
+            :speed="2"
+            :animate="true">
+        </FacebookLoader>
+        <InstagramLoader
+            v-if="!datas"
+            :speed="2"
+            :animate="true">
+        </InstagramLoader>
+        <div v-else class="content">
+            <!-- Your real loaded data goes in here. -->
             <transition-group class="ul" tag="ul">
                 <li v-for="(item, index) in datas" :key="item.time">
                     <div class="img"><img :src="item.img" alt=""></div>
@@ -46,12 +70,15 @@
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import CircleProgress from '@/components/content/circle-progress'
-
+import { ContentLoader, FacebookLoader, InstagramLoader } from 'vue-content-loader' // 骨架屏
 export default {
     components: {
         Header,
         Footer,
-        CircleProgress
+        CircleProgress,
+        ContentLoader,
+        FacebookLoader,
+        InstagramLoader
     },
     data() {
         return {
@@ -70,7 +97,36 @@ export default {
             ],
             barColor: ['#73d011', '#F2AE57', '#ba1a1a'],
             backgroundColor: ['#c3daaa', '#FFE8CC', '#dcb0b0'],
-            datas: [
+            datas: null,
+            nextDatas: [
+                {
+                    img: require('../assets/plan/6.png'),
+                    progress: 30,
+                    time: 'PM 03:00',
+                    event: '日光浴',
+                    place: '高雄'
+                },
+                {
+                    img: require('../assets/plan/7.png'),
+                    progress: 70,
+                    time: 'AM 13:00',
+                    event: '登山',
+                    place: '玉龙雪山'
+                },
+                {
+                    img: require('../assets/plan/8.png'),
+                    progress: 50,
+                    time: 'PM 07:00',
+                    event: '自驾游',
+                    place: '三峡'
+                }
+            ]
+        }
+    },
+    mounted() {
+        // Just pretend this is an AJAX call. Use your imagination.
+        setTimeout(() => {
+            this.datas =  [
                 {
                     img: require('../assets/plan/1.png'),
                     progress: 30,
@@ -106,31 +162,8 @@ export default {
                     event: '泡澡',
                     place: '哈尔滨'
                 }
-            ],
-            nextDatas: [
-                {
-                    img: require('../assets/plan/6.png'),
-                    progress: 30,
-                    time: 'PM 03:00',
-                    event: '日光浴',
-                    place: '高雄'
-                },
-                {
-                    img: require('../assets/plan/7.png'),
-                    progress: 70,
-                    time: 'AM 13:00',
-                    event: '登山',
-                    place: '玉龙雪山'
-                },
-                {
-                    img: require('../assets/plan/8.png'),
-                    progress: 50,
-                    time: 'PM 07:00',
-                    event: '自驾游',
-                    place: '三峡'
-                }
             ]
-        }
+        }, 800);
     },
     methods: {
         add () {

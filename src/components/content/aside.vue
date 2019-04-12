@@ -1,11 +1,13 @@
 <template>
     <div class="aside">
         <ul>
+            <li @click="goHomepage">首页</li>
             <li>外观</li>
             <li>内饰</li>
             <li>配置</li>
             <li>价格</li>
             <li>选配</li>
+            <li @click="goBack">返回</li>
         </ul>
     </div>
 </template>
@@ -16,6 +18,14 @@ export default {
     data() {
         return {
             
+        }
+    },
+    methods: {
+        goBack () {
+            this.$router.push({ path:'/home'})
+        },
+        goHomepage () {
+            this.$router.push({ path:'/'})
         }
     }
 }

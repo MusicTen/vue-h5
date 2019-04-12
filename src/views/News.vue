@@ -10,6 +10,8 @@
             <div class="add" @click="add">+</div>
         </div>
         <div class="router" :style="{height:routerHeight+'px'}">
+        
+
             <router-view></router-view>
         </div>
         <transition name="fade">
