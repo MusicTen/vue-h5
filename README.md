@@ -1,3 +1,7 @@
+---
+
+---
+
 # app-vue
 
 ### Project setup
@@ -392,4 +396,53 @@ computed: {
     }
 }
 ```
+
+#### 19. PostCSS是什么
+
+> PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
+
+你可以在使用预处理器的情况下使用它，也可以在原生的css中使用它。它都是支持的，并且它具备着一个庞大的生态系统，例如你可能常用的`Autoprefixer`，就是PostCSS的一个非常受欢迎的插件，被Google, Shopify, Twitter, Bootstrap和CodePen等公司广泛使用。
+
+根目录下配置`postcss.config.js`
+
+```javascript
+module.exports = {
+  plugins: {
+    'postcss-import': {}
+  }
+}
+```
+
+#### 20. CSS object-fit 属性
+
+- contain
+
+  被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加**黑边**。
+
+- cover
+
+  被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。
+
+- fill
+
+  被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。
+
+- none
+
+  被替换的内容将保持其原有的尺寸。
+
+- scale-down
+
+  内容的尺寸与 `none` 或 `contain` 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。
+
+**注**： 虽然ie不支持，但用于移动端H5就比较适合
+
+#### 21.动态九宫格布局
+
+1. 实现一个和页面等宽的正方形父盒子
+2. 子盒子定位到正方形父盒子中央
+3. 等待页面加载完成后，再给其加类名改变子盒子定位（添加过渡）
+
+> 1vw = 1% viewport width 
+> 1vh = 1% viewport height
 

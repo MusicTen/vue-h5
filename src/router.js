@@ -94,6 +94,16 @@ export default new Router({
       path: '/timeline',
       name: 'timeline',
       component: Timeline
+    },
+    {
+      path: '/credit',
+      name: 'credit',
+      component: () => import('./views/Credit.vue')
+    },
+    {
+      path: '/circle',
+      name: 'circle',
+      component: () => import('./views/Circle.vue')
     }
   ]
 })

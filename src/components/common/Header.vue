@@ -38,7 +38,7 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 2;
+        z-index: 9;
         font-size: 20px;
         img {
             width: 24px;

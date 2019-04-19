@@ -9,21 +9,22 @@
             secondaryColor: String - The color of the pulser.
             animate: Boolean - Whether or not to display the pulser.
         -->
-        <ContentLoader
-            v-if="!datas"
-            :speed="2"
-            :animate="true">
-        </ContentLoader>
-        <FacebookLoader
-            v-if="!datas"
-            :speed="2"
-            :animate="true">
-        </FacebookLoader>
-        <InstagramLoader
-            v-if="!datas"
-            :speed="2"
-            :animate="true">
-        </InstagramLoader>
+        <div v-if="!datas" class="skeleton">
+           <ContentLoader
+                :height="80"
+                :speed="2"
+                :animate="true">
+                <rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
+            </ContentLoader>
+            <FacebookLoader
+                :speed="2"
+                :animate="true">
+            </FacebookLoader>
+            <InstagramLoader
+                :speed="2"
+                :animate="true">
+            </InstagramLoader> 
+        </div>
         <div v-else class="content">
             <!-- Your real loaded data goes in here. -->
             <transition-group class="ul" tag="ul">
@@ -190,6 +191,9 @@ export default {
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
+    }
+    .skeleton {
+        padding: 15px;
     }
     .content {
         padding: 15px;

@@ -27,7 +27,5 @@
         width: 100%;
         height: 400px;
         background: linear-gradient(to left bottom, #ff898f, #fff);
-        /* (水平半径：左上 右上 右下 左下)/(垂直半径：左上 右上 右下 左下) */
-        border-radius:0 0 200px 200px/0 0 50px 50px;
     }
 </style>

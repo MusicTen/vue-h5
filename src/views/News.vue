@@ -10,8 +10,6 @@
             <div class="add" @click="add">+</div>
         </div>
         <div class="router" :style="{height:routerHeight+'px'}">
-        
-
             <router-view></router-view>
         </div>
         <transition name="fade">
@@ -57,7 +55,7 @@
                         click: true,
                         scrollX: true, // 横向滚动
                         scrollY: false, // 忽略竖直方向的滚动
-                        eventPassthrough: "vertical"
+                        eventPassthrough: "vertical",
                     })
                 } else {
                     this.scroll.refresh(); // 重新计算better-scroll，当DOM结构发生变化的时候务必要调用确保滚动的效果正常

@@ -119,7 +119,7 @@ export default {
 <style lang="scss" scoped>
     .slider {
         width: 100%;
-        height: 475px;
+        height: 400px;
         position: relative;
         overflow: hidden;
         ul {
@@ -127,15 +127,20 @@ export default {
         }
         .items {
             width: 500%; // 应该暴露出去，动态修改
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
             li {
                 width: 20%; // 应该暴露出去，动态修改
+                height: 100%;
                 float: left;
                 position: relative;
                 img {
                     width: 100%;
+                    height: 100%;
+                    object-fit: cover; // 被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。
+                    // object-fit: contain; // 保持原有尺寸比例。保证替换内容尺寸一定可以在容器里面放得下。因此，此参数可能会在容器内留下空白。
                 }
                 span {
                     width: 50px;
@@ -149,16 +154,13 @@ export default {
                     position: absolute;
                     top: 30%;
                     left: calc(50% - 25px);
-                    
                 }
             }
             &.addTransition {
                 transition: all 1s;
-                -webkit-transition: all 1s;
             }
             &.removeTransition {
                 transition: none;
-                -webkit-transition: none;
             }
         }
         .btns {

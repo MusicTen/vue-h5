@@ -57,3 +57,8 @@ hr {
     border: none;
     height: 1px;
 }
+
+button {
+    border: none;
+    outline: none; /* 消除默认点击蓝色边框效果 */
+}

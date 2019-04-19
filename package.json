@@ -29,6 +29,7 @@
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
     "vue-lazyload": "^1.2.6",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "core-js": "^2.6.5"
   }
 }
