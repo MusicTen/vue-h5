@@ -5,7 +5,7 @@
         <ul class="foods-wrapper">
           <li v-for="(food, index) in foods" :key="index" class="food-item border-1px">
             <div class="icon">
-              <img width="57" height="57" v-lazy="food.icon">
+              <img width="60" height="60" v-lazy="food.icon">
             </div>
             <div class="content">
               <h2 class="name">{{food.name}}</h2>
@@ -104,43 +104,44 @@
               margin-bottom: 0;
             }
             .icon{
-              flex: 0 0 57px;
-              margin-right: 10px;
+              flex: 0 0 60px;
+              margin-right: 20px;
             }
             .content{
               flex: 1;
               .name{
-                margin: 2px 0 8px 0;
-                height: 14px;
-                line-height: 14px;
-                font-size: 14px;
+                margin: 2px 0 6px 0;
+                height: 40px;
+                line-height: 40px;
+                font-size: 28px;
                 color: rgb(7, 17, 27);
               }
               .desc, .extra{
-                line-height: 10px;
-                font-size: 10px;
+                line-height: 20px;
+                font-size: 14px;
                 color: rgb(147, 153, 159);
               }
               .desc{
-                line-height: 12px;
+                line-height: 30px;
                 margin-bottom: 8px;
               }
               .extra{
+                line-height: 30px;
                 .count{
                   margin-right: 12px;
                 }
               }
               .price{
                 font-weight: 700;
-                line-height: 24px;
+                line-height: 40px;
                 .now{
                   margin-right: 8px;
-                  font-size: 14px;
+                  font-size: 24px;
                   color: rgb(240, 20, 20);
                 }
                 .old{
                   text-decoration: line-through;
-                  font-size: 10px;
+                  font-size: 16px;
                   color: rgb(147, 153, 159);
                 }
               }

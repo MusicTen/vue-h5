@@ -104,6 +104,11 @@ export default new Router({
       path: '/circle',
       name: 'circle',
       component: () => import('./views/Circle.vue')
+    },
+    {
+      path: '/csstricks',
+      name: 'csstricks',
+      component: () => import('./views/CssTricks.vue')
     }
   ]
 })
