@@ -66,7 +66,7 @@ export default {
 }
 .top {
   width: 100%;
-  height: 120px;
+  height: 160px;
   background-color: #fafafa;
   padding: 30px;
   box-sizing: border-box;
@@ -81,16 +81,16 @@ export default {
   }
   ul {
     float: right;
-    padding-top: 5px;
-    margin-right: -10px;
+    padding-top: 10px;
+    margin-right: 10px;
     li {
       position: relative;
       z-index: 1;
       float: left;
       img {
-        width: 30px;
-        height: 30px;
-        border: 1px solid #e7e7e7;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #e7e7e7;
         border-radius: 50%;
       }
     }
@@ -104,12 +104,12 @@ export default {
     }
     &::after {
       content: "";
-      width: 15px;
-      height: 15px;
-      border-top: 3px solid #ddd;
-      border-right: 3px solid #ddd;
+      width: 30px;
+      height: 30px;
+      border-top: 6px solid #ddd;
+      border-right: 6px solid #ddd;
       position: absolute;
-      top: 27px;
+      top: 54px;
       right: 20px;
       transform: rotate(45deg);
     }
@@ -118,20 +118,20 @@ export default {
     h5 {
       width: 60%;
       white-space: nowrap;
-      font-size: 16px;
+      font-size: 30px;
       white-space: nowrap;
       text-overflow: ellipsis;
-      padding: 4px 0 8px 0;
+      padding: 4px 0 10px 0;
     }
     p {
-      font-size: 12px;
+      font-size: 24px;
       color: #21b119;
     }
   }
 }
 .content {
   padding: 0 15px;
-  font-size: 16px;
+  font-size: 30px;
   h5 {
     padding-bottom: 10px;
     white-space: nowrap;
@@ -139,6 +139,7 @@ export default {
     text-overflow: ellipsis;
   }
   p {
+    font-size: 28px;
     display: -webkit-box;
     text-align: justify;
     -webkit-box-orient: vertical;
@@ -156,7 +157,7 @@ export default {
       border: 1px solid #ddd;
       img {
         width: 100%;
-        height: 80px;
+        height: 160px;
         object-fit: cover;
         display: block;
       }
@@ -169,8 +170,8 @@ export default {
     align-items: center;
     color: #c6c6c6;
     img {
-      width: 30px;
-      height: 30px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
     }
     span {
@@ -184,14 +185,15 @@ export default {
   margin: 0 15px;
   padding: 10px;
   background-color: #fafafa;
-  font-size: 14px;
+  font-size: 28px;
   .zan {
     height: 30px;
     line-height: 30px;
     margin-bottom: 10px;
     span:first-child {
-      width: 50px;
-      height: 30px;
+      width: 80px;
+      height: 40px;
+      line-height: 40px;
       text-align: center;
       border-radius: 5px;
       float: left;
@@ -205,15 +207,15 @@ export default {
     }
   }
   p {
-    line-height: 18px;
+    line-height: 40px;
     span {
       color: #04a9f4;
     }
   }
 }
 .tab {
-  height: 50px;
-  line-height: 50px;
+  height: 80px;
+  line-height: 80px;
   box-sizing: border-box;
   margin: 15px;
   border-top: 1px solid #ddd;
@@ -223,7 +225,7 @@ export default {
     li {
       flex: 1;
       text-align: center;
-      font-size: 20px;
+      font-size: 30px;
     }
   }
 }

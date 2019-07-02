@@ -1,11 +1,17 @@
 <template>
   <div class="nofind">
-    <img src="./../assets/logo.png" alt>
+    <img @click="gohome" src="./../assets/logo.png" alt>
     <h1>404</h1>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    gohome() {
+      this.$router.push('/')
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 .nofind {

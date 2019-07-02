@@ -178,12 +178,12 @@ export default {
   // }
   li {
     width: 140px;
-    height: 100px;
-    line-height: 100px;
+    height: 80px;
+    line-height: 80px;
     text-align: center;
     background-color: #f7f7f8;
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 28px;
     border-radius: 8px;
     position: relative;
     span {

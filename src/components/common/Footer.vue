@@ -95,12 +95,13 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 26px;
     text-decoration: none;
     color: #999;
     img {
       width: 40px;
       height: 40px;
+      margin-top: 4px;
     }
     span {
       margin-top: 4px;

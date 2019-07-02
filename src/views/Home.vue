@@ -104,11 +104,11 @@ export default {
   position: relative;
   color: #fff;
   img:first-child {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     border: 2px solid #fff;
-    margin-top: 50px;
+    margin-top: 80px;
   }
   .bg {
     width: 100%;
@@ -129,7 +129,7 @@ export default {
     font-size: 80px;
   }
   h4 {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 36px;
   }
   p {
@@ -144,15 +144,15 @@ export default {
     text-align: center;
     color: #333;
     background-color: #f2f2f2;
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 32px;
+    margin-top: 30px;
     background-image: linear-gradient(to right, pink, skyblue);
   }
 }
 .well {
   ul {
     width: 100%;
-    height: 100vw; // 100vw = 100%的视口宽
+    height: 500px;
     position: relative;
     li {
       width: 33.33%;
@@ -169,8 +169,8 @@ export default {
       color: #888;
       opacity: 0;
       img {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
         margin-bottom: 10px;
       }
       &:last-child {

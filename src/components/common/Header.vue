@@ -41,11 +41,11 @@ export default {
   z-index: 9;
   font-size: 32px;
   img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
-    top: 13px;
-    left: 13px;
+    top: 25px;
+    left: 25px;
   }
   span {
     font-size: 50px;

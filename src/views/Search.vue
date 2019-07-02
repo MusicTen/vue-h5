@@ -2,7 +2,7 @@
   <div>
     <Header></Header>
     <div class="inputBox">
-      <input type="text" v-model="query" placeholder="搁着输入。。。">
+      <input type="text" v-model="query" placeholder="搁这儿输入...">
       <img src="../assets/search.png" alt>
     </div>
     <h3 class="hot">热门推荐</h3>
@@ -101,16 +101,20 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 10px;
+  padding: 10px;
   input {
-    width: 70%;
+    width: 80%;
     height: 80px;
     line-height: 80px;
-    border: 2px solid rgb(180, 180, 180);
+    border: 2px solid rgb(190, 190, 190);
     font-size: 30px;
     border-radius: 40px;
     outline: none;
     padding-left: 20px;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      color: rgb(190, 190, 190);
+      font-size: 24px;
+    }
   }
   img {
     width: 50px;
@@ -129,7 +133,7 @@ export default {
   li {
     display: flex;
     border-bottom: 2px solid rgb(214, 214, 214);
-    padding: 10px;
+    padding: 20px 10px;
     img {
       width: 180px;
       height: 120px;

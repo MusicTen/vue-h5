@@ -169,7 +169,7 @@ export default {
     padding: 0 10px;
     h3 {
       color: #fff;
-      font-size: 42px;
+      font-size: 40px;
       font-family: "Times New Roman", Times, serif;
       font-style: italic;
     }
@@ -185,7 +185,7 @@ export default {
       justify-content: space-between;
       span {
         width: 100%;
-        height: 0.2em;
+        height: 4px;
         background-color: #fff;
         transition: all 0.7s;
       }
@@ -367,15 +367,15 @@ export default {
       z-index: 2;
     }
     img:last-child {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-left: -40px;
-      margin-top: -40px;
+      margin-left: -30px;
+      margin-top: -30px;
       z-index: 2;
-      filter: grayscale(25%);
+      filter: grayscale(20%);
       animation: identifier 2s cubic-bezier(0, 0, 0.58, 1) infinite;
     }
     @keyframes identifier {
@@ -397,29 +397,29 @@ export default {
     }
     &::before {
       content: "";
-      width: 200px;
-      height: 120px;
+      width: 300px;
+      height: 170px;
       background-color: #768590;
       border: 5px solid #fff;
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-left: -100px;
-      margin-top: -60px;
+      margin-left: -160px;
+      margin-top: -90px;
       z-index: 0;
       transform: rotate(-5deg);
     }
     &::after {
       content: "";
-      width: 200px;
-      height: 120px;
+      width: 300px;
+      height: 170px;
       background-color: #eff4de;
       border: 5px solid #fff;
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-left: -100px;
-      margin-top: -60px;
+      margin-left: -160px;
+      margin-top: -90px;
       z-index: 0;
       transform: rotate(4deg);
     }

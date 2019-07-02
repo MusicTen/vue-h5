@@ -195,14 +195,14 @@ export default {
         left: 20px;
         &::before {
           content: "";
-          width: 30px;
-          height: 30px;
+          width: 24px;
+          height: 24px;
           border-style: solid;
           border-color: #d9dbdb;
           border-width: 4px 0 0 4px;
           position: absolute;
-          top: 13px;
-          left: 19px;
+          top: 16px;
+          left: 22px;
           transform: rotate(-45deg);
         }
       }
@@ -210,14 +210,14 @@ export default {
         right: 20px;
         &::before {
           content: "";
-          width: 30px;
-          height: 30px;
+          width: 24px;
+          height: 24px;
           border-style: solid;
           border-color: #d9dbdb;
           border-width: 4px 4px 0 0;
           position: absolute;
-          top: 13px;
-          right: 19px;
+          top: 16px;
+          right: 22px;
           transform: rotate(45deg);
         }
       }

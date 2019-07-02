@@ -1,7 +1,3 @@
----
-
----
-
 # app-vue
 
 ### Project setup
@@ -89,7 +85,8 @@ npm run build
 
 #### 2. 子组件引入图片路径问题
 
-​	首先图片路径 imgPath 有二种写法： 
+首先图片路径 imgPath 有二种写法： 
+
 ​	一、如果图片是在 assets 文件夹下面的话，需要在路径前面加上 require 函数才行，否则 webpack 会识别不了路径报错
 
 ```javascript
@@ -118,7 +115,7 @@ npm run build
 
 #### 6 Vue 组件 data 为什么必须是函数
 
-​	因为js本身的特性带来的，如果 `data` 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 `data` 作为一个函数返回一个对象，那么每一个实例的 `data` 属性都是独立的，不会相互影响了
+ 	因为js本身的特性带来的，如果 `data` 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 `data` 作为一个函数返回一个对象，那么每一个实例的 `data` 属性都是独立的，不会相互影响了
 
 
 #### 7. vue自定义轮播组件
@@ -133,11 +130,11 @@ npm run build
 
 ​	1、在入口js文件main.js中引入，一些公共的样式文件，可以在这里引入。
 
-```html
+```javascript
 import Vue from 'vue'
 import App from './App' // 引入App这个组件
 import router from './router' /* 引入路由配置 */
-import '../static/css/global.css' /*引入公共样式*/
+import '../static/css/global.css' /* 引入公共样式 */
 ```
 
 ​	2、在index.html中引入
@@ -158,7 +155,7 @@ import '../static/css/global.css' /*引入公共样式*/
 ```
 
 
-​	3、在app.vue中引入，但是这样引入有一个问题，就是在index.html的HEADH上会多出一个空的`<style></style>`
+​	3、在app.vue中引入，但是这样引入有一个问题，就是在index.html的<head>上会多出一个空的`<style></style>`
 
 ```html
 <template>
@@ -196,7 +193,7 @@ export default {
 
 ​	SVG 的主要竞争者是 Flash。与 Flash 相比，SVG 最大的优势是与其他标准（比如 XSL 和 DOM）相兼容。而 Flash 则是未开源的私有技术。
 
-​	Internet Explorer9，火狐，谷歌Chrome，Opera和Safari都支持SVG。IE8和早期版本都需要一个插件 - 如Adobe SVG浏览器，这是免费提供的。
+​	IE9，火狐，谷歌Chrome，Opera和Safari都支持SVG。IE8和早期版本都需要一个插件 - 如Adobe SVG浏览器，这是免费提供的。
 
 #### 11. vue 实现移动端页面切换效果
 
@@ -208,7 +205,7 @@ export default {
 
 1. 安装echarts依赖
 
-   ```
+   ```bash
    npm install echarts -S
    ```
 
@@ -248,7 +245,7 @@ export default {
             title: { text: '在Vue中使用echarts' },
             tooltip: {},
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
             },
             yAxis: {},
             series: [{
@@ -376,7 +373,7 @@ export default {
     <li style="height: 0px;visibility: hidden;"></li>
    ```
 
-2. 利于after（适用于每行列数确定的场景）
+2. 利用伪类after（适用于每行列数确定的场景）
 
 ```css
 ul:after {
@@ -401,7 +398,7 @@ computed: {
 
 > PostCSS is a tool for transforming CSS with JS plugins. These plugins can support variables and mixins, transpile future CSS syntax, inline images, and more.
 
-你可以在使用预处理器的情况下使用它，也可以在原生的css中使用它。它都是支持的，并且它具备着一个庞大的生态系统，例如你可能常用的`Autoprefixer`，就是PostCSS的一个非常受欢迎的插件，被Google, Shopify, Twitter, Bootstrap和CodePen等公司广泛使用。
+你可以在使用预处理器的情况下使用它，也可以在原生的css中使用它。它都是支持的，并且它具备着一个庞大的生态系统，例如常用的`Autoprefixer`，就是PostCSS的一个非常受欢迎的自动补全css前缀插件，被Google, Shopify, Twitter, Bootstrap和CodePen等公司广泛使用。
 
 根目录下配置`postcss.config.js`
 
@@ -413,29 +410,54 @@ module.exports = {
 }
 ```
 
-#### 20. CSS object-fit 属性
+#### 20. CSS object-fit 与 object-position
 
-- contain
+##### object-fit 属性
 
-  被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加**黑边**。
+> 这个属性决定了像img和videos这样的替换元素的内容应该如何使用他的宽度和高度来填充其容器。
 
-- cover
+| 值         | 描述                                                         |
+| ---------- | ------------------------------------------------------------ |
+| fill       | 默认值。被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。 |
+| contain    | 被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加**黑边**。 |
+| cover      | 被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。 |
+| none       | 被替换的内容将保持其原有的尺寸。                             |
+| scale-down | 内容的尺寸与 `none` 或 `contain` 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。 |
 
-  被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。
+![](./src/assets/md/1.png)
 
-- fill
+![](./src/assets/md/2.png)
 
-  被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。
-
-- none
-
-  被替换的内容将保持其原有的尺寸。
-
-- scale-down
-
-  内容的尺寸与 `none` 或 `contain` 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。
+因为scal-down 就是 none和contain之间进行选择，选择的是尺寸比较小的那个 ，所以它是始终能保证替换元素完整显示的，并且它显示的最大尺寸就是图片实际尺寸。
 
 **注**： 虽然ie不支持，但用于移动端H5就比较适合
+
+##### object-position 属性
+
+> object-position 用来控制替换内容位置
+
+| 值                           | 描述                                                         |
+| ---------------------------- | ------------------------------------------------------------ |
+| left top right bottom center | 如果只指定一个值， 则另个将会是'center'                      |
+| x% y%                        | 第一个值是水平位置，第二个值是垂直，左上角是0% 0%。右下角是100% 100%。如果仅指定了一个值，另一个将是50% |
+| xpos ypos                    | 第一个值是水平位置，第二个值是垂直，左上角是0。单位可以是像素（0px0px）或者任何其他css单位。如果仅指定了一个值，另一个将是50%。你可以混合使用%和position |
+
+**语法：**
+`object-position:x轴距离 y轴距离;`
+
+object-position属性定义时可以用像素，也可以用百分比，也可以用关键字。例如，object-position: 10px 10px 是左上角各空出10px，object-position: 100% 100%是右下角，object-position: center 是中间 和 object-position: 50% 50% 效果一样。
+
+|                            |                            |                            |                            |                            |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| ![](./src/assets/md/3.png) | ![](./src/assets/md/4.png) | ![](./src/assets/md/5.png) | ![](./src/assets/md/6.png) | ![](./src/assets/md/7.png) |
+
+**注意：**
+1、object-position属性与background-position很相似，其取值和background-position属性取值一样，但是它的默认值是50% 50%， background-position的默认值是0% 0% 
+2、如果仅指定了一个值，其他值将是50％
+
+##### 总结
+
+这两个属性，主要是**解决在布局时遇到的 尺寸 和 宽高比问题**，说简单点就是处理图片会变形的问题，而object-position默认值是 50% 50% ，就是居中的意思，也可以用这两个属性来做 替换元素 的内容的水平垂直居中。
 
 #### 21.动态九宫格布局
 
