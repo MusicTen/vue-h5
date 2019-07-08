@@ -1,5 +1,5 @@
 <template>
-  <div class="list" :style="'min-height: '+ bodyHeight + 'px'">
+  <div class="list">
     <Header :isShow="!1"></Header>
     <div class="content">
       <!-- Your real loaded data goes in here. -->
@@ -58,7 +58,6 @@ export default {
   },
   data() {
     return {
-      bodyHeight: this.$store.state.windowHeight - 100,
       show: true,
       progress: 50,
       imgs: [
@@ -164,7 +163,7 @@ export default {
 <style lang="scss" scoped>
 .list {
   width: 100%;
-  min-height: 100%;
+  min-height: calc(100vh - 200px);
   background: linear-gradient(to left bottom, #96cdc7, #e8b9dd);
 }
 .fade-enter-active,

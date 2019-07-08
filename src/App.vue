@@ -34,7 +34,7 @@ export default {
 <style lang="scss">
 #app {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 100px 0;
   // filter: grayscale(100%);
   font-family: Arial, sans-serif;

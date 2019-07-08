@@ -5,7 +5,6 @@ import News from '@/views/News.vue' // '@/'--相对路径(简写)
 import List from './views/List.vue'
 import Search from './views/Search.vue'
 import NoFind from './views/NoFind.vue'
-import NavigatorList from './views/NavigatorList.vue'
 import Timeline from './views/Timeline.vue'
 import SlideRender from './components/content/BScroll/GoodsListRender.vue'
 import FormListRender from './components/content/BScroll/GoodsListRender.vue'
@@ -86,11 +85,6 @@ export default new Router({
       component: NoFind
     },
     {
-      path: '/navs',
-      name: 'navs',
-      component: NavigatorList
-    },
-    {
       path: '/timeline',
       name: 'timeline',
       component: Timeline
@@ -109,6 +103,11 @@ export default new Router({
       path: '/csstricks',
       name: 'csstricks',
       component: () => import('./views/CssTricks.vue')
+    },
+    {
+      path: '/pullto',
+      name: 'pullto',
+      component: () => import('./views/Pullto.vue')
     }
   ]
 })
