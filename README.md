@@ -1,24 +1,6 @@
-# app-vue
-
-### Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-------
+# vue-h5
 
 ### 问题汇总：
-
 #### 1. 深拷贝与浅拷贝
 
 - 浅拷贝
@@ -111,20 +93,20 @@ npm run build
 
 #### 5. NextTick 是做什么的
 
-​	`$nextTick` 是在下次 `DOM` 更新循环结束之后执行延迟回调，在修改数据之后使用 `$nextTick`，则可以在回调中获取更新后的 `DOM`
+`$nextTick` 是在下次 `DOM` 更新循环结束之后执行延迟回调，在修改数据之后使用 `$nextTick`，则可以在回调中获取更新后的 `DOM`
 
 #### 6 Vue 组件 data 为什么必须是函数
 
- 	因为js本身的特性带来的，如果 `data` 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 `data` 作为一个函数返回一个对象，那么每一个实例的 `data` 属性都是独立的，不会相互影响了
+因为js本身的特性带来的，如果 `data` 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 `data` 作为一个函数返回一个对象，那么每一个实例的 `data` 属性都是独立的，不会相互影响了
 
 
 #### 7. vue自定义轮播组件
 
-​	难点在于给每个图片的切换过程添加过渡效果。可尝试使用Vue自带的class钩子，或直接使用css的transition属性，也可以用`setTimeout`方法加递归来实现。如果使用css的`transition`过渡方法，在处理边界的无限滚动上总会在chrome浏览器上有一下闪动，即使添加了`-webkit-transform-style: preserve-3d;`
+难点在于给每个图片的切换过程添加过渡效果。可尝试使用Vue自带的class钩子，或直接使用css的transition属性，也可以用`setTimeout`方法加递归来实现。如果使用css的`transition`过渡方法，在处理边界的无限滚动上总会在chrome浏览器上有一下闪动，即使添加了`-webkit-transform-style: preserve-3d;`
 
- 和` -webkit-backface-visibility: hidden;` 也还是没用，而且要配合`transition`的 `transitionend `事件对于IE浏览器的支持也不怎么好。
+和` -webkit-backface-visibility: hidden;` 也还是没用，而且要配合`transition`的 `transitionend `事件对于IE浏览器的支持也不怎么好。
 
-​	实现思路：首尾各加一张假图，利用css3过渡属性，由于vue中我没法监听过渡完成`transitionend`事件，取巧用延迟来控制图片位置秒切，并设置节流阀。
+实现思路：首尾各加一张假图，利用css3过渡属性，由于vue中我没法监听过渡完成`transitionend`事件，取巧用延迟来控制图片位置秒切，并设置节流阀。
 
 #### 8. vue 引入公共css文件
 
@@ -197,9 +179,9 @@ export default {
 
 #### 11. vue 实现移动端页面切换效果
 
-​	在应用transform属性的时候，fixed定位会变成absolute。页面转换的时候，就变成了相对translation定位。所以如果子页面中有绝对定位的话，移动的过程中页面会变形。当父级元素有transform的元素，子级的fixed的特性将转换成absolute。例如，绝对定位在页面底部的footer组件。
+在应用transform属性的时候，fixed定位会变成absolute。页面转换的时候，就变成了相对translation定位。所以如果子页面中有绝对定位的话，移动的过程中页面会变形。当父级元素有transform的元素，子级的fixed的特性将转换成absolute。例如，绝对定位在页面底部的footer组件。
 
-​	页面中用到fixed固定底部面板区域, 但是在vue router动画中会出现位置抖动(因为存在多个不同底部面板, 无法把面板移出transition), 具体就是顶部紧跟着内容高度而不是固定在视图下方, 查了下发现是tansfrom的标准所致。
+页面中用到fixed固定底部面板区域, 但是在vue router动画中会出现位置抖动(因为存在多个不同底部面板, 无法把面板移出transition), 具体就是顶部紧跟着内容高度而不是固定在视图下方, 查了下发现是tansfrom的标准所致。
 
 #### 12. 在 vue 项目中使用 echarts
 
@@ -259,7 +241,7 @@ export default {
 }
 ```
 
-​	注意： 这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用
+注意： 这里echarts初始化应在钩子函数mounted()中，这个钩子函数是在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用
 
 - 按需引入
 
@@ -308,7 +290,7 @@ export default {
 }
 ```
 
-​	这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全。
+这里之所以使用 require 而不是 import，是因为 require 可以直接从 node_modules 中查找，而 import 必须把路径写全。
 
 #### 13. vue/cli3.0 处理静态资源
 
@@ -359,11 +341,11 @@ export default {
 
 #### 16. JS 中 forEach 不能用 break
 
-​	forEach()无法在所有元素都传递给调用的函数之前终止遍历。也就是说，没有像for循环中使用的相应的break语句。如果要提前终止，必须把forEach()方法放在一个try块中，并能抛出一个异常。如果forEach()调用的函数抛出foreach.break异常，循环会提前终止
+forEach()无法在所有元素都传递给调用的函数之前终止遍历。也就是说，没有像for循环中使用的相应的break语句。如果要提前终止，必须把forEach()方法放在一个try块中，并能抛出一个异常。如果forEach()调用的函数抛出foreach.break异常，循环会提前终止
 
 #### 17. flex 最后一行左对齐
 
-​	布局上要求item两端对齐，而且最后一行在列不满的情况下要求左对齐，使用flex的`justify-content: space-between;`实现时发现最后一行不能左对齐，而是两端对齐方式，下图不是项目上想要的效果（不使用flex也可以实现，仅讨论使用flex实现）
+布局上要求item两端对齐，而且最后一行在列不满的情况下要求左对齐，使用flex的`justify-content: space-between;`实现时发现最后一行不能左对齐，而是两端对齐方式，下图不是项目上想要的效果（不使用flex也可以实现，仅讨论使用flex实现）
 
 在网上查了很多资料:
 
@@ -384,7 +366,7 @@ ul:after {
 
 #### 18. 在 Vue 组件中获得 Vuex 状态
 
-​	由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在**计算属性**中返回某个状态
+由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在**计算属性**中返回某个状态
 
 ```javascript
 computed: {
