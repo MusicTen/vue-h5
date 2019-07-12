@@ -33,7 +33,8 @@
     "sass-loader": "^7.1.0",
     "swiper": "^4.5.0",
     "vue-lazyload": "^1.2.6",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "lodash-es": ">=4.17.14"
   },
   "postcss": {
     "plugins": {
