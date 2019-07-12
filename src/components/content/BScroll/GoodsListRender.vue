@@ -28,14 +28,23 @@
 <script>
   import data from '@/assets/js/goods-list.json'
   import BScroll from 'better-scroll'
-  let _foods = []
-  data.goods.forEach((item) => {
-    _foods = _foods.concat(item.foods)
-  })
   export default {
+    props: {
+      type: {
+        type: Number,
+        default: 1
+      }
+    },
     data() {
       return {
-        foods: _foods
+        foods: data.goods[this.type - 1].foods
+      }
+    },
+    watch: {
+      type(val) {
+        let typeVal = val > 8 ? Math.floor(Math.random() * 8) : val - 1
+        this.foods = data.goods[typeVal].foods
+        console.log(this.foods)
       }
     },
     mounted() {
@@ -61,20 +70,12 @@
         this.scroll.on('dblclick', (e) => {
           console.log('dblclick:', e)
         })
-        this._appendFood()
       })
     },
     destroyed() {
       this.scroll && this.scroll.destroy()
     },
-    methods: {
-      _appendFood() {
-        while (this.foods.length < 100) {
-          this.foods = this.foods.concat(_foods)
-          this._appendFood()
-        }
-      }
-    }
+    methods: {}
   }
 </script>
 

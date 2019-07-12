@@ -3,9 +3,7 @@
     <Header></Header>
     <div class="scroll">
       <ul>
-        <li class="current">关注</li>
-        <li>热门</li>
-        <li>发现</li>
+        <li v-for="(item, index) in nav" :class="{current: currentIdx == index}" :key="index" @click="switchNav(index)">{{ item }}</li>
       </ul>
     </div>
     <div v-if="!datas" class="skeleton">
@@ -38,7 +36,9 @@ export default {
   },
   data() {
     return {
-      datas: null
+      datas: null,
+      nav: ['关注', '热门', '发现'],
+      currentIdx: 0
     };
   },
   mounted() {
@@ -115,6 +115,11 @@ export default {
         }
       ];
     }, 1000)
+  },
+  methods: {
+    switchNav(idx) {
+      this.currentIdx = idx
+    }
   }
 }
 </script>

@@ -10,7 +10,7 @@
       <div class="add" @click="add">+</div>
     </div>
     <div class="router">
-      <router-view></router-view>
+      <GoodsListRender :type="currentTabIndex"></GoodsListRender>
     </div>
     <transition name="fade">
       <EditPopup v-if="showPopup" @close="close"></EditPopup>
@@ -23,12 +23,14 @@
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import EditPopup from "@/components/content/editPopup";
+import GoodsListRender from "@/components/content/BScroll/GoodsListRender";
 import BScroll from "better-scroll";
 export default {
   components: {
     Header,
     Footer,
-    EditPopup
+    EditPopup,
+    GoodsListRender
   },
   data() {
     return {
@@ -73,7 +75,7 @@ export default {
         this.currentTabIndex = item.id;
       }
       // 以下部分编写点击相应的navList item时，渲染的逻辑代码
-      this.$router.replace("/news/" + this.currentTabIndex);
+      this.$router.push(`/news/${ this.currentTabIndex }`);
       // 实现移动端导航点击自动滑动效果
       const viewportWidth = this.$store.state.windowWidth;
       const tabListWidth = this.$refs.tabList.clientWidth;

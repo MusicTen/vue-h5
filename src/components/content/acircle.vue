@@ -133,7 +133,7 @@ export default {
   padding: 0 15px;
   font-size: 30px;
   h5 {
-    padding-bottom: 10px;
+    padding: 10px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -153,7 +153,7 @@ export default {
     flex-wrap: wrap;
     li {
       width: 32%;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       border: 1px solid #ddd;
       img {
         width: 100%;
@@ -169,6 +169,7 @@ export default {
     display: flex;
     align-items: center;
     color: #c6c6c6;
+    padding: 10px 0;
     img {
       width: 50px;
       height: 50px;
