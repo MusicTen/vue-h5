@@ -86,6 +86,7 @@ export default {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 9;
   display: flex;
   flex: 4;
   .item {

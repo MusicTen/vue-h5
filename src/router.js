@@ -61,22 +61,27 @@ export default new Router({
     {
       path: '/credit',
       name: 'credit',
-      component: () => import('./views/Credit.vue')
+      component: () => import('@/views/Credit.vue')
     },
     {
       path: '/circle',
       name: 'circle',
-      component: () => import('./views/Circle.vue')
+      component: () => import('@/views/Circle.vue')
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: () => import('@/views/Detail.vue')
     },
     {
       path: '/csstricks',
       name: 'csstricks',
-      component: () => import('./views/CssTricks.vue')
+      component: () => import('@/views/CssTricks.vue')
     },
     {
       path: '/pullto',
       name: 'pullto',
-      component: () => import('./views/Pullto.vue')
+      component: () => import('@/views/Pullto.vue')
     }
   ]
 })

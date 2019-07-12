@@ -1,61 +1,76 @@
 <template>
-  <div class="post">
-    <div class="top">
-      <img class="portrait" :src="this.data.circleImg" alt>
-      <ul>
-        <li v-for="(item,index) in this.data.topThreeImgs" :key="index">
-          <img :src="item" alt>
-        </li>
-      </ul>
-      <div class="name">
-        <h5>{{this.data.circleName}}</h5>
-        <p>{{this.data.concernNum}}{{this.data.concernType}}关注</p>
-      </div>
-    </div>
-    <div class="content">
-      <h5>{{this.data.title}}</h5>
-      <p>{{this.data.summary}}</p>
-      <ul>
-        <li v-for="(item,index) in this.data.imgs" :key="index">
-          <img :src="item" alt>
-        </li>
-      </ul>
-      <div class="release">
-        <img :src="this.data.publisherImg" alt>
-        <span>{{this.data.publisher}}</span>发布
-      </div>
-    </div>
-    <div class="hotcomment">
-      <div class="zan">
-        <span>热评</span>
-        <span>1197赞</span>
-      </div>
-      <p>
-        <span>{{this.data.hotcomment.commentator}}</span>
-        ：{{this.data.hotcomment.comment}}
-      </p>
-    </div>
-    <div class="tab">
-      <ul>
-        <li>&#x2660; {{this.data.commentNum}}</li>
-        <li>&#x2665; {{this.data.agreeNum}}</li>
-        <li>&#x2666; {{this.data.shareNum}}</li>
-        <li>&#x2663; {{this.data.collectNum}}</li>
-      </ul>
-    </div>
+  <div>
+    <ul v-for="(sub, idx) in this.data" :key="idx">
+      <li class="post" @click="seeDetails(idx, sub.type)">
+        <div class="top">
+          <img class="portrait" :src="sub.circleImg" alt>
+          <ul>
+            <li v-for="(item,index) in sub.topThreeImgs" :key="index">
+              <img :src="item" alt>
+            </li>
+          </ul>
+          <div class="name">
+            <h5>{{sub.circleName}}</h5>
+            <p>{{sub.concernNum}}{{sub.concernType}}关注</p>
+          </div>
+        </div>
+        <div class="content">
+          <h5>{{sub.title}}</h5>
+          <p>{{sub.summary}}</p>
+          <ul>
+            <li v-for="(item,index) in sub.imgs" :key="index">
+              <img :src="item" alt>
+            </li>
+          </ul>
+          <div class="release">
+            <img :src="sub.publisherImg" alt>
+            <span>{{sub.publisher}}</span>发布
+          </div>
+        </div>
+        <div class="hotcomment">
+          <div class="zan">
+            <span>热评</span>
+            <span>1197赞</span>
+          </div>
+          <p>
+            <span>{{sub.hotcomment.commentator}}</span>
+            ：{{sub.hotcomment.comment}}
+          </p>
+        </div>
+        <div class="tab">
+          <ul>
+            <li>&#x2660; {{sub.commentNum}}</li>
+            <li>&#x2665; {{sub.agreeNum}}</li>
+            <li>&#x2666; {{sub.shareNum}}</li>
+            <li>&#x2663; {{sub.collectNum}}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
 export default {
   props: {
-    data: Object
+    data: Array,
+    isDetail: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {};
   },
   computed: {},
   mounted() {
-    console.log(this.data);
+    console.log('acircle', this.data);
+  },
+  methods: {
+    seeDetails(idx, type) {
+      if (!this.isDetail) {
+        this.$router.push({path: '/detail', query: {idx: idx, type: type}});
+      }
+    }
   }
 };
 </script>
