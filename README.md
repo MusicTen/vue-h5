@@ -450,3 +450,8 @@ object-position属性定义时可以用像素，也可以用百分比，也可�
 > 1vw = 1% viewport width 
 > 1vh = 1% viewport height
 
+#### 22.实现swiper左右滑动内容区控制导航tab同时切换高亮
+
+利用swiper的高度自适应特性，解决滑动切换时的高度问题
+
+> 有轮播需求时， 可以使用Vue-Awesome-Swiper插件在vue项目中使用
