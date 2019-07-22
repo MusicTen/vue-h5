@@ -82,6 +82,11 @@ export default new Router({
       path: '/pullto',
       name: 'pullto',
       component: () => import('@/views/Pullto.vue')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/Test.vue')
     }
   ]
 })

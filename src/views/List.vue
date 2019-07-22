@@ -4,7 +4,7 @@
     <div class="content">
       <!-- Your real loaded data goes in here. -->
       <transition-group class="ul" tag="ul">
-        <li v-for="(item, index) in datas" :key="item.time">
+        <li v-for="(item, index) in datas" @click='goPullto' :key="item.time">
           <div class="img">
             <img :src="item.img" alt>
           </div>
@@ -144,6 +144,9 @@ export default {
         event: "自驾游",
         place: "三峡"
       });
+    },
+    goPullto() {
+      this.$router.push({path: '/pullto'});
     }
   },
   beforeCreate() {

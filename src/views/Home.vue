@@ -3,7 +3,7 @@
     <div class="infor">
       <img src="../assets/car/headImg.jpg" alt>
       <img class="bg" src="../assets/car/headImg.jpg" alt>
-      <h4>yesterday</h4>
+      <h4 @click="test">yesterday</h4>
       <p>资料完成度60%></p>
       <span @click="more">&#xbb;</span>
       <button @click="add">签到+10积分</button>
@@ -78,6 +78,9 @@ export default {
     }, 100);
   },
   methods: {
+    test() {
+      this.$router.push({ path: "/test" });
+    },
     more() {
       this.$router.push({ path: "/timeline" });
     },
