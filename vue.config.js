@@ -1,3 +1,5 @@
+
 module.exports = {
-  publicPath: '/staff/'
+  publicPath: './',
+  productionSourceMap: false
 }
