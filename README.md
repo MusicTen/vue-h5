@@ -462,7 +462,7 @@ object-position属性定义时可以用像素，也可以用百分比，也可�
 git subtree push --prefix=dist origin gh-pages
 ```
 
-意思就是把指定的dist文件提交到gh-pages分支上，项目多出了一个gh-pages分支，展示地址就是 ***Github用户名.github.io/创建的仓库名*** 本项目，它的展示地址就是 [MusicTen.github.io/vue-h5/]
+意思就是把指定的dist文件提交到gh-pages分支上(`.gitignore`勿忽略dist)，远程仓库多出了一个gh-pages分支，展示地址就是 ***Github用户名.github.io/创建的仓库名*** ，本项目的展示地址就是 [MusicTen.github.io/vue-h5/]
 
-> 样式失效可能是引用路径错误的原因。如果是使用Vue-cli3.0构建的项目，需要在`vue.config.js`中设置`publicPath: '/staff/'`
+> 样式失效可能是引用路径错误的原因。如果是使用Vue-cli3.0构建的项目，需要在`vue.config.js`中设置`publicPath: './'`
 

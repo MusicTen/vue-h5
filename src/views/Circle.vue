@@ -190,7 +190,13 @@ export default {
             require("@/assets/car/accord3.jpg"),
             require("@/assets/car/accord4.jpg"),
             require("@/assets/car/accord5.jpg"),
-            require("@/assets/car/accord6.jpg")
+            require("@/assets/car/accord6.jpg"),
+            require("@/assets/car/accord7.jpg"),
+            require("@/assets/car/accord8.jpg"),
+            require("@/assets/car/accord9.jpg"),
+            require("@/assets/car/accord10.jpg"),
+            require("@/assets/car/accord11.jpg"),
+            require("@/assets/car/accord12.jpg"),
           ],
           component: 'Photoset'
         }
