@@ -19,7 +19,7 @@
         <ICountUp :endVal="endVal" :options="options"/>
       </div>
       <div class="right">
-        <img src="../assets/car/headImg.jpg" @click="add" alt>
+        <img src="../assets/img/car/headImg.jpg" @click="add" alt>
       </div>
     </div>
     <div v-if="isfixed" style="height: 260px"></div>
@@ -37,8 +37,8 @@
       </ul>
     </div>
     <div class="imgs">
-      <img src="../assets/car/plan1.jpg" alt>
-      <img src="../assets/search.png" @click="toSearch" alt>
+      <img src="../assets/img/car/plan1.jpg" alt>
+      <img src="../assets/img/search.png" @click="toSearch" alt>
     </div>
     <transition name="fade">
       <Aside v-if="isshow"></Aside>
@@ -61,35 +61,35 @@ export default {
       colors: ["green", "purple", "pink", "yellow", ""],
       lists: [
         {
-          img: require("../assets/car/plan2.jpg"),
+          img: require("../assets/img/car/plan2.jpg"),
           tips: "夺目设计 闪耀个性",
           matching: "28T技术型",
           price: "¥259700",
           like: false
         },
         {
-          img: require("../assets/car/plan3.jpg"),
+          img: require("../assets/img/car/plan3.jpg"),
           tips: "风驰动力 感知竞逐",
           matching: "28T豪华型",
           price: "¥279700",
           like: true
         },
         {
-          img: require("../assets/car/plan4.jpg"),
+          img: require("../assets/img/car/plan4.jpg"),
           tips: "智趣科技 连接未来",
           matching: "28T领先型",
           price: "¥289700",
           like: false
         },
         {
-          img: require("../assets/car/plan5.jpg"),
+          img: require("../assets/img/car/plan5.jpg"),
           tips: "全能守护 无忧驾趣",
           matching: "28T四驱领先运动型",
           price: "¥314700",
           like: true
         },
         {
-          img: require("../assets/car/plan2.jpg"),
+          img: require("../assets/img/car/plan2.jpg"),
           tips: "悦己而燃 青春征程",
           matching: "28T四驱铂金版",
           price: "¥352700",
@@ -210,7 +210,7 @@ export default {
   .bgc {
     width: 100%;
     height: 400px;
-    background: url("../assets/car/plan7.jpg") no-repeat top center;
+    background: url("../assets/img/car/plan7.jpg") no-repeat top center;
     background-size: 100%;
     position: relative;
     .left {

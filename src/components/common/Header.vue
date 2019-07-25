@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img v-if="isShow" src="../../assets/back.png" @click="goback" alt="返回">vue-app
+    <img v-if="isShow" src="../../assets/img/back.png" @click="goback" alt="返回">vue-app
     <span>{{['&#x2600;', '&#x263c;', '&#x2601;', '&#x2746;', '&#x2745;', '&#x2745;'][random]}}</span>
   </div>
 </template>

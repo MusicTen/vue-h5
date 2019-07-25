@@ -25,7 +25,7 @@ export default {
   name: 'test',
   data() {
     return {
-      imgs: [require('../assets/logo.png')]
+      imgs: [require('../assets/img/logo.png')]
     }
   },
   mounted() {

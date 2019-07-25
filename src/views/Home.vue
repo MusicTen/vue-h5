@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div class="infor">
-      <img src="../assets/car/headImg.jpg" alt>
-      <img class="bg" src="../assets/car/headImg.jpg" alt>
+      <img src="../assets/img/car/headImg.jpg" alt>
+      <img class="bg" src="../assets/img/car/headImg.jpg" alt>
       <h4 @click="test">yesterday</h4>
       <p>资料完成度60%></p>
       <span @click="more">&#xbb;</span>
@@ -15,7 +15,7 @@
           <p>{{item.title}}</p>
         </li>
         <li>
-          <img src="../assets/share/add.png" alt>
+          <img src="../assets/img/share/add.png" alt>
         </li>
       </ul>
     </div>
@@ -34,39 +34,39 @@ export default {
       icons: [
         {
           title: "alibaba",
-          img: require("../assets/share/alipay.png")
+          img: require("../assets/img/share/alipay.png")
         },
         {
           title: "wechat",
-          img: require("../assets/share/wechat.png")
+          img: require("../assets/img/share/wechat.png")
         },
         {
           title: "weibo",
-          img: require("../assets/share/weibo.png")
+          img: require("../assets/img/share/weibo.png")
         },
         {
           title: "qq",
-          img: require("../assets/share/qq.png")
+          img: require("../assets/img/share/qq.png")
         },
         {
           title: "Facebook",
-          img: require("../assets/share/Facebook.png")
+          img: require("../assets/img/share/Facebook.png")
         },
         {
           title: "twitter",
-          img: require("../assets/share/twitter.png")
+          img: require("../assets/img/share/twitter.png")
         },
         {
           title: "tumblr",
-          img: require("../assets/share/tumblr.png")
+          img: require("../assets/img/share/tumblr.png")
         },
         {
           title: "pinterest",
-          img: require("../assets/share/pinterest.png")
+          img: require("../assets/img/share/pinterest.png")
         },
         {
           title: "github",
-          img: require("../assets/share/github.png")
+          img: require("../assets/img/share/github.png")
         }
       ],
       isAnimate: false

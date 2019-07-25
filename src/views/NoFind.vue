@@ -1,6 +1,6 @@
 <template>
   <div class="nofind">
-    <img @click="gohome" src="./../assets/logo.png" alt>
+    <img @click="gohome" src="./../assets/img/logo.png" alt>
     <h1>404</h1>
   </div>
 </template>

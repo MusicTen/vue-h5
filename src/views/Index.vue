@@ -4,9 +4,9 @@
     <Slider :imgData="lists"></Slider>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../assets/car/plan2.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/car/plan3.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="../assets/car/plan4.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../assets/img/car/plan2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../assets/img/car/plan3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../assets/img/car/plan4.jpg" alt=""></div>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -32,9 +32,9 @@ export default {
   data() {
     return {
       lists: [
-        require("../assets/banner/1.jpg"),
-        require("../assets/banner/2.jpg"),
-        require("../assets/banner/3.jpg")
+        require("../assets/img/banner/1.jpg"),
+        require("../assets/img/banner/2.jpg"),
+        require("../assets/img/banner/3.jpg")
       ]
     };
   },

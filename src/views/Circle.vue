@@ -52,12 +52,12 @@ export default {
               summary:
                 "马云谈996归根到底是希望员工倾注在工作上更多的经历，回头看马云的成长史，做老师的时候又花了多少精力在本职工作上呢？",
               imgs: [
-                require("../assets/car/plan1.jpg"),
-                require("../assets/car/plan2.jpg"),
-                require("../assets/car/plan3.jpg"),
-                require("../assets/car/plan4.jpg"),
-                require("../assets/car/plan5.jpg"),
-                require("../assets/car/plan7.jpg")
+                require("../assets/img/car/plan1.jpg"),
+                require("../assets/img/car/plan2.jpg"),
+                require("../assets/img/car/plan3.jpg"),
+                require("../assets/img/car/plan4.jpg"),
+                require("../assets/img/car/plan5.jpg"),
+                require("../assets/img/car/plan7.jpg")
               ],
               publisher: "首席内幕官",
               publisherImg:
@@ -87,12 +87,12 @@ export default {
               summary:
                 "本来是想帮朋友吓跑相亲对象，没想到对方居然一开始就知道？？这样的相亲对象太沙(可)雕(爱)了！来感受一下hahahahahahaha",
               imgs: [
-                require("../assets/car/plan1.jpg"),
-                require("../assets/car/plan2.jpg"),
-                require("../assets/car/plan3.jpg"),
-                require("../assets/car/plan4.jpg"),
-                require("../assets/car/plan5.jpg"),
-                require("../assets/car/plan7.jpg")
+                require("../assets/img/car/plan1.jpg"),
+                require("../assets/img/car/plan2.jpg"),
+                require("../assets/img/car/plan3.jpg"),
+                require("../assets/img/car/plan4.jpg"),
+                require("../assets/img/car/plan5.jpg"),
+                require("../assets/img/car/plan7.jpg")
               ],
               publisher: "皮咔皮咔皮卡丘",
               publisherImg:
@@ -127,12 +127,12 @@ export default {
               summary:
                 "马云谈996归根到底是希望员工倾注在工作上更多的经历，回头看马云的成长史，做老师的时候又花了多少精力在本职工作上呢？",
               imgs: [
-                require("../assets/car/plan7.jpg"),
-                require("../assets/car/plan5.jpg"),
-                require("../assets/car/plan4.jpg"),
-                require("../assets/car/plan3.jpg"),
-                require("../assets/car/plan2.jpg"),
-                require("../assets/car/plan1.jpg")
+                require("../assets/img/car/plan7.jpg"),
+                require("../assets/img/car/plan5.jpg"),
+                require("../assets/img/car/plan4.jpg"),
+                require("../assets/img/car/plan3.jpg"),
+                require("../assets/img/car/plan2.jpg"),
+                require("../assets/img/car/plan1.jpg")
               ],
               publisher: "首席内幕官",
               publisherImg:
@@ -162,12 +162,12 @@ export default {
               summary:
                 "本来是想帮朋友吓跑相亲对象，没想到对方居然一开始就知道？？这样的相亲对象太沙(可)雕(爱)了！来感受一下hahahahahahaha",
               imgs: [
-                require("../assets/car/plan7.jpg"),
-                require("../assets/car/plan5.jpg"),
-                require("../assets/car/plan4.jpg"),
-                require("../assets/car/plan3.jpg"),
-                require("../assets/car/plan2.jpg"),
-                require("../assets/car/plan1.jpg")
+                require("../assets/img/car/plan7.jpg"),
+                require("../assets/img/car/plan5.jpg"),
+                require("../assets/img/car/plan4.jpg"),
+                require("../assets/img/car/plan3.jpg"),
+                require("../assets/img/car/plan2.jpg"),
+                require("../assets/img/car/plan1.jpg")
               ],
               publisher: "皮咔皮咔皮卡丘",
               publisherImg:
@@ -185,18 +185,18 @@ export default {
           component: 'Popular'
         }, {
           data: [
-            require("@/assets/car/accord1.jpg"),
-            require("@/assets/car/accord2.jpg"),
-            require("@/assets/car/accord3.jpg"),
-            require("@/assets/car/accord4.jpg"),
-            require("@/assets/car/accord5.jpg"),
-            require("@/assets/car/accord6.jpg"),
-            require("@/assets/car/accord7.jpg"),
-            require("@/assets/car/accord8.jpg"),
-            require("@/assets/car/accord9.jpg"),
-            require("@/assets/car/accord10.jpg"),
-            require("@/assets/car/accord11.jpg"),
-            require("@/assets/car/accord12.jpg"),
+            require("@/assets/img/car/accord1.jpg"),
+            require("@/assets/img/car/accord2.jpg"),
+            require("@/assets/img/car/accord3.jpg"),
+            require("@/assets/img/car/accord4.jpg"),
+            require("@/assets/img/car/accord5.jpg"),
+            require("@/assets/img/car/accord6.jpg"),
+            require("@/assets/img/car/accord7.jpg"),
+            require("@/assets/img/car/accord8.jpg"),
+            require("@/assets/img/car/accord9.jpg"),
+            require("@/assets/img/car/accord10.jpg"),
+            require("@/assets/img/car/accord11.jpg"),
+            require("@/assets/img/car/accord12.jpg"),
           ],
           component: 'Photoset'
         }

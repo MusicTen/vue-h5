@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="inputBox">
       <input type="text" v-model="query" placeholder="搁这儿输入...">
-      <img src="../assets/search.png" alt>
+      <img src="../assets/img/search.png" alt>
     </div>
     <h3 class="hot">热门推荐</h3>
     <div class="content">
@@ -41,25 +41,25 @@ export default {
       query: "",
       dataList: [
         {
-          imgUrl: require("../assets/car/plan2.jpg"),
+          imgUrl: require("../assets/img/car/plan2.jpg"),
           createTime: "2020-02-13",
           title: "凯迪拉克XT4  2018款 28T 两驱豪华型-前脸",
           from: "凯迪拉克官网"
         },
         {
-          imgUrl: require("../assets/car/plan3.jpg"),
+          imgUrl: require("../assets/img/car/plan3.jpg"),
           createTime: "2020-03-13",
           title: "凯迪拉克XT4  2018款 28T 两驱豪华型-侧脸",
           from: "凯迪拉克官网"
         },
         {
-          imgUrl: require("../assets/car/plan4.jpg"),
+          imgUrl: require("../assets/img/car/plan4.jpg"),
           createTime: "2020-04-13",
           title: "凯迪拉克XT4  2018款 28T 两驱豪华型-左侧",
           from: "凯迪拉克官网"
         },
         {
-          imgUrl: require("../assets/car/plan5.jpg"),
+          imgUrl: require("../assets/img/car/plan5.jpg"),
           createTime: "2020-05-13",
           title: "凯迪拉克XT4  2018款 28T 两驱豪华型-右侧",
           from: "凯迪拉克官网"

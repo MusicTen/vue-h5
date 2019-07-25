@@ -61,48 +61,48 @@ export default {
       show: true,
       progress: 50,
       imgs: [
-        require("../assets/plan/1.png"),
-        require("../assets/plan/2.png"),
-        require("../assets/plan/3.png"),
-        require("../assets/plan/4.png"),
-        require("../assets/plan/5.png"),
-        require("../assets/plan/6.png"),
-        require("../assets/plan/7.png"),
-        require("../assets/plan/8.png")
+        require("../assets/img/plan/1.png"),
+        require("../assets/img/plan/2.png"),
+        require("../assets/img/plan/3.png"),
+        require("../assets/img/plan/4.png"),
+        require("../assets/img/plan/5.png"),
+        require("../assets/img/plan/6.png"),
+        require("../assets/img/plan/7.png"),
+        require("../assets/img/plan/8.png")
       ],
       barColor: ["#73d011", "#F2AE57", "#ba1a1a"],
       backgroundColor: ["#c3daaa", "#FFE8CC", "#dcb0b0"],
       datas: [
         {
-          img: require("../assets/plan/1.png"),
+          img: require("../assets/img/plan/1.png"),
           progress: 30,
           time: "PM 13:00",
           event: "冲浪",
           place: "三亚"
         },
         {
-          img: require("../assets/plan/2.png"),
+          img: require("../assets/img/plan/2.png"),
           progress: 70,
           time: "AM 08:00",
           event: "海钓",
           place: "钓鱼岛"
         },
         {
-          img: require("./../assets/plan/3.png"),
+          img: require("./../assets/img/plan/3.png"),
           progress: 50,
           time: "PM 04:00",
           event: "跳伞",
           place: "上海"
         },
         {
-          img: require("./../assets/plan/4.png"),
+          img: require("./../assets/img/plan/4.png"),
           progress: 10,
           time: "AM 09:30",
           event: "聚餐",
           place: "青岛"
         },
         {
-          img: require("./../assets/plan/5.png"),
+          img: require("./../assets/img/plan/5.png"),
           progress: 90,
           time: "PM 11:00",
           event: "泡澡",
@@ -111,21 +111,21 @@ export default {
       ],
       nextDatas: [
         {
-          img: require("../assets/plan/6.png"),
+          img: require("../assets/img/plan/6.png"),
           progress: 30,
           time: "PM 03:00",
           event: "日光浴",
           place: "高雄"
         },
         {
-          img: require("../assets/plan/7.png"),
+          img: require("../assets/img/plan/7.png"),
           progress: 70,
           time: "AM 13:00",
           event: "登山",
           place: "玉龙雪山"
         },
         {
-          img: require("../assets/plan/8.png"),
+          img: require("../assets/img/plan/8.png"),
           progress: 50,
           time: "PM 07:00",
           event: "自驾游",
@@ -138,7 +138,7 @@ export default {
     add() {
       let index = Math.round(Math.random() * 8);
       this.datas.unshift({
-        img: require(`../assets/plan/${index}.png`),
+        img: require(`../assets/img/plan/${index}.png`),
         progress: index * 10,
         time: `PM 1${index}:00`,
         event: "自驾游",
@@ -222,7 +222,7 @@ export default {
           padding-left: 16px;
           &::before {
             content: "";
-            background: url("../assets/plan/0.png");
+            background: url("../assets/img/plan/0.png");
             width: 16px;
             height: 16px;
             position: absolute;

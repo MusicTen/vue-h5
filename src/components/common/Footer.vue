@@ -27,26 +27,26 @@ export default {
         {
           title: "首页",
           path: "/",
-          icon: require("../../assets/tabbar/home2.png"),
-          iconActive: require("../../assets/tabbar/home1.png")
+          icon: require("../../assets/img/tabbar/home2.png"),
+          iconActive: require("../../assets/img/tabbar/home1.png")
         },
         {
           title: "列表",
           path: "/list",
-          icon: require("../../assets/tabbar/list2.png"),
-          iconActive: require("../../assets/tabbar/list1.png")
+          icon: require("../../assets/img/tabbar/list2.png"),
+          iconActive: require("../../assets/img/tabbar/list1.png")
         },
         {
           title: "新闻",
           path: "/news/1",
-          icon: require("../../assets/tabbar/news2.png"),
-          iconActive: require("../../assets/tabbar/news1.png")
+          icon: require("../../assets/img/tabbar/news2.png"),
+          iconActive: require("../../assets/img/tabbar/news1.png")
         },
         {
           title: "个人中心",
           path: "/home",
-          icon: require("../../assets/tabbar/excel2.png"),
-          iconActive: require("../../assets/tabbar/excel1.png")
+          icon: require("../../assets/img/tabbar/excel2.png"),
+          iconActive: require("../../assets/img/tabbar/excel1.png")
         }
       ]
     };
