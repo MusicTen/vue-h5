@@ -20,7 +20,7 @@
 <script>
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import Slider from "@/components/content/banner.vue";
+import Slider from "@/components/content/Slider.vue";
 import Swiper from "swiper";
 
 export default {

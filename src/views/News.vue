@@ -22,7 +22,7 @@
 <script>
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import EditPopup from "@/components/content/editPopup";
+import EditPopup from "@/components/content/EditPopup";
 import GoodsListRender from "@/components/content/BScroll/GoodsListRender";
 import BScroll from "better-scroll";
 export default {

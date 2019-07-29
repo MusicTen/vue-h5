@@ -41,16 +41,16 @@
       <img src="../assets/img/search.png" @click="toSearch" alt>
     </div>
     <transition name="fade">
-      <Aside v-if="isshow"></Aside>
+      <AsideNav v-if="isshow"></AsideNav>
     </transition>
   </div>
 </template>
 <script>
-import Aside from "@/components/content/aside.vue";
+import AsideNav from "@/components/content/AsideNav.vue";
 import ICountUp from "vue-countup-v2";
 export default {
   components: {
-    Aside,
+    AsideNav,
     ICountUp
   },
   data() {

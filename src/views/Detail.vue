@@ -19,7 +19,7 @@
 </template>
 <script>
 import Header from "@/components/common/Header";
-import Acircle from "@/components/content/acircle";
+import Acircle from "@/components/content/Acircle";
 import { InstagramLoader } from "vue-content-loader"; // 骨架屏
 export default {
   components: {

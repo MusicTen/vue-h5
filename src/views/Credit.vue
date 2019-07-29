@@ -6,7 +6,7 @@
 </template>
 <script>
 import Header from "@/components/common/Header";
-import Guage from "@/components/content/guage";
+import Guage from "@/components/content/Guage";
 export default {
   components: {
     Header,

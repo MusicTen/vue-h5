@@ -9,7 +9,7 @@ const echarts = require("echarts");
 // 导入数据
 import { option } from "../../assets/js/guage-option";
 export default {
-  name: "",
+  name: "Guage",
   data() {
     return {};
   },

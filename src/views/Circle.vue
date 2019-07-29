@@ -19,9 +19,9 @@
 </template>
 <script>
 import Header from "@/components/common/Header";
-import Follow from "@/components/content/acircle";
-import Popular from "@/components/content/acircle";
-import Photoset from "@/components/content/photoset";
+import Follow from "@/components/content/Acircle";
+import Popular from "@/components/content/Acircle";
+import Photoset from "@/components/content/Photoset";
 import Swiper from "swiper";
 
 export default {

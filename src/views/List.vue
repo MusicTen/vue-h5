@@ -49,7 +49,7 @@
 <script>
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import CircleProgress from "@/components/content/circle-progress";
+import CircleProgress from "@/components/content/CircleProgress";
 export default {
   components: {
     Header,

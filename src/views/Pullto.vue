@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import MiniRefresh from "@/components/content/minirefresh"
+import MiniRefresh from "@/components/content/Minirefresh"
 export default {
   name: 'Pullto',
   components: {

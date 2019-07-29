@@ -11,7 +11,7 @@
 import Viewer from 'viewerjs';
 import 'viewerjs/dist/viewer.css';
 export default {
-  name: 'photoset',
+  name: 'Photoset',
   props: {
     data: Array
   },

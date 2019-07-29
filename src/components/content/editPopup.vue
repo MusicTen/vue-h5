@@ -37,6 +37,7 @@
 <script>
 import BScroll from "better-scroll";
 export default {
+  name: 'EditPopup',
   data() {
     return {
       // selected: this.$store.state.CurrentNavList,
