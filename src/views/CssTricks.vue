@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .tricks {
+  padding-top: 100px;
   background-color: pink;
   div {
     margin: 5px auto;

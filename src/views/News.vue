@@ -107,6 +107,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
+  padding: 100px 0;
   .wrapper {
     // 用于横向滚动父盒子
     width: 100%;

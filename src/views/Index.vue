@@ -66,6 +66,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .index {
+  padding: 100px 0;
   .swiper-container {
     width: 100%;
     margin: 20px auto;

@@ -101,7 +101,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding: 100px 10px 0;
   input {
     width: 80%;
     height: 80px;

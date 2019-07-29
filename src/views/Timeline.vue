@@ -229,7 +229,7 @@ export default {
       font-size: 32px;
       color: #ccccce;
       position: absolute;
-      top: 20px;
+      top: 80px;
       right: 20px;
     }
     .right {

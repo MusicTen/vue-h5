@@ -167,6 +167,7 @@ export default {
 .list {
   width: 100%;
   min-height: calc(100vh - 200px);
+  padding: 100px 0;
   background: linear-gradient(to left bottom, #96cdc7, #e8b9dd);
 }
 .fade-enter-active,

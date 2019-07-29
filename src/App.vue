@@ -40,7 +40,6 @@ export default {
   bottom: 0;
   right: 0;
   overflow: auto;
-  padding: 100px 0;
   // filter: grayscale(100%);
   font-family: Arial, sans-serif;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <Header></Header>
     <div v-if="!datas" class="skeleton">
       <!-- Displays if datas is not set.
@@ -45,4 +45,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.content {
+  padding-top: 100px;
+}
 </style>

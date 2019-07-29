@@ -98,13 +98,9 @@ export default {
   position: relative;
 }
 .infor {
-  position: absolute;
-  top: -100px;
-  left: 0;
   width: 100%;
   height: 500px;
   text-align: center;
-  position: relative;
   color: #fff;
   img:first-child {
     width: 160px;

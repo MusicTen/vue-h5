@@ -3,9 +3,7 @@ import Router from 'vue-router'
 import Index from './views/Index.vue'
 import News from '@/views/News.vue' // '@/'--相对路径(简写)
 import List from '@/views/List.vue'
-import Search from '@/views/Search.vue'
-import NoFind from '@/views/NoFind.vue'
-import Timeline from '@/views/Timeline.vue'
+import Home from '@/views/Home.vue'
 
 Vue.use(Router)
 
@@ -29,34 +27,29 @@ export default new Router({
       component: News
     },
     {
-      path: '/home',
-      name: 'home',
-      // 像vue这种单页面应用，如果没有应用懒加载，运用webpack打包后的文件将会异常的大，
-      // 造成进入首页时，需要加载的内容过多，时间过长，会出啊先长时间的白屏，
-      // 即使做了loading也是不利于用户体验，而运用懒加载则可以将页面进行划分，
-      // 需要的时候加载页面，可以有效的分担首页所承担的加载压力，减少首页加载用时
-      // 在访问该路由时，按需加载
-      component: () => import('./views/Home.vue')
-    },
-    {
       path: '/list',
       name: 'list',
       component: List
     },
     {
-      path: '/search',
-      name: 'search',
-      component: Search
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     {
-      path: '*',
-      name: 'nofind',
-      component: NoFind
+      path: '/search',
+      name: 'search',
+      // 像vue这种单页面应用，如果没有应用懒加载，运用webpack打包后的文件将会异常的大，
+      // 造成进入首页时，需要加载的内容过多，时间过长，会出啊先长时间的白屏，
+      // 即使做了loading也是不利于用户体验，而运用懒加载则可以将页面进行划分，
+      // 需要的时候加载页面，可以有效的分担首页所承担的加载压力，减少首页加载用时
+      // 在访问该路由时，按需加载
+      component: () => import('./views/Search.vue')
     },
     {
       path: '/timeline',
       name: 'timeline',
-      component: Timeline
+      component: () => import('./views/Timeline.vue')
     },
     {
       path: '/credit',
@@ -87,6 +80,11 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: () => import('@/views/Test.vue')
+    },
+    {
+      path: '*',
+      name: 'nofind',
+      component: () => import('./views/NoFind.vue')
     }
   ]
 })
