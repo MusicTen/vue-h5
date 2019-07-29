@@ -84,7 +84,7 @@ export default new Router({
     {
       path: '*',
       name: 'nofind',
-      component: () => import('./views/NoFind.vue')
+      component: () => import('@/views/NoFind.vue')
     }
   ]
 })
