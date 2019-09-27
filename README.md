@@ -466,3 +466,13 @@ git subtree push --prefix=dist origin gh-pages
 
 > 样式失效可能是引用路径错误的原因。如果是使用Vue-cli3.0构建的项目，需要在`vue.config.js`中设置`publicPath: './'`
 
+#### 24. Git无法检测到文件名大小写的更改
+
+```bash
+git config core.ignorecase false
+```
+
+在当前项目中，早先创建并已经push到远程的文件及文件夹，将名称大小写更改后，git无法检测出更改。
+
+出现这种情况的原因是，git默认配置为忽略大小写，因此无法正确检测大小写的更改。
+那么，解决办法是，在当前项目中，运行`git config core.ignorecase false`，关闭git忽略大小写配置，即可检测到大小写名称更改。
