@@ -77,6 +77,16 @@ export default new Router({
       component: () => import('@/views/Pullto.vue')
     },
     {
+      path: '/share',
+      name: 'share',
+      component: () => import('@/views/Share.vue')
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('@/views/Loading.vue')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import('@/views/Test.vue')

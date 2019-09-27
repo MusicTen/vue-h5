@@ -10,7 +10,7 @@
     </div>
     <div class="well">
       <ul :class="{animate: isAnimate}">
-        <li v-for="(item, index) in icons" :key="index" @click="iconsClick">
+        <li v-for="(item, index) in icons" :key="index" @click="iconsClick(index)">
           <img :src="item.img" alt>
           <p>{{item.title}}</p>
         </li>
@@ -79,16 +79,22 @@ export default {
   },
   methods: {
     test() {
-      this.$router.push({ path: "/test" });
+      this.$router.push({ path: "/test" })
     },
     more() {
-      this.$router.push({ path: "/timeline" });
+      this.$router.push({ path: "/timeline" })
     },
     add() {
-      this.$router.push({ path: "/credit" });
+      this.$router.push({ path: "/credit" })
     },
-    iconsClick() {
-      this.$router.push({ path: "/circle" });
+    iconsClick(i) {
+      if (i === 1) {
+        this.$router.push({ path: "/share" })
+      } else if (i === 8) {
+        location.href = 'https://github.com/MusicTen'
+      } else {
+        this.$router.push({ path: "/circle" })
+      }
     }
   }
 };

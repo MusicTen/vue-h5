@@ -4,7 +4,7 @@
     <div class="content">
       <!-- Your real loaded data goes in here. -->
       <transition-group class="ul" tag="ul">
-        <li v-for="(item, index) in datas" @click='goPullto' :key="item.time">
+        <li v-for="(item) in datas" @click='goPullto' :key="item.id">
           <div class="img">
             <img :src="item.img" alt>
           </div>
@@ -16,14 +16,14 @@
           <circle-progress
             class="progress"
             ref="$circle"
-            :id="index"
+            :id="item.id + +new Date()"
             :progress="item.progress"
             :barColor="(item.progress > 35 ? (item.progress > 65 ? barColor[2] : barColor[1]) : barColor[0])"
             :backgroundColor="item.progress > 35 ? (item.progress > 65 ? backgroundColor[2] : backgroundColor[1]) : backgroundColor[0]"
           ></circle-progress>
         </li>
       </transition-group>
-      <div class="add1" @click="add">
+      <div class="add1" @click="goLoading">
         ＋
         <div class="left">
           <div class="circle"></div>
@@ -74,13 +74,15 @@ export default {
       backgroundColor: ["#c3daaa", "#FFE8CC", "#dcb0b0"],
       datas: [
         {
+          id: 1,
           img: require("../assets/img/plan/1.png"),
           progress: 30,
           time: "PM 13:00",
           event: "冲浪",
-          place: "三亚"
+          place: "三亚",
         },
         {
+          id: 2,
           img: require("../assets/img/plan/2.png"),
           progress: 70,
           time: "AM 08:00",
@@ -88,6 +90,7 @@ export default {
           place: "钓鱼岛"
         },
         {
+          id: 3,
           img: require("./../assets/img/plan/3.png"),
           progress: 50,
           time: "PM 04:00",
@@ -95,6 +98,7 @@ export default {
           place: "上海"
         },
         {
+          id: 4,
           img: require("./../assets/img/plan/4.png"),
           progress: 10,
           time: "AM 09:30",
@@ -102,51 +106,55 @@ export default {
           place: "青岛"
         },
         {
+          id: 5,
           img: require("./../assets/img/plan/5.png"),
           progress: 90,
           time: "PM 11:00",
           event: "泡澡",
           place: "哈尔滨"
-        }
-      ],
-      nextDatas: [
+        },
         {
+          id: 6,
           img: require("../assets/img/plan/6.png"),
-          progress: 30,
+          progress: 20,
           time: "PM 03:00",
           event: "日光浴",
           place: "高雄"
         },
         {
+          id: 7,
           img: require("../assets/img/plan/7.png"),
-          progress: 70,
+          progress: 80,
           time: "AM 13:00",
           event: "登山",
           place: "玉龙雪山"
         },
         {
+          id: 8,
           img: require("../assets/img/plan/8.png"),
-          progress: 50,
+          progress: 60,
           time: "PM 07:00",
           event: "自驾游",
           place: "三峡"
         }
-      ]
+      ],
+      id: 9
     };
   },
   methods: {
     add() {
-      let index = Math.round(Math.random() * 8);
-      this.datas.unshift({
-        img: require(`../assets/img/plan/${index}.png`),
-        progress: index * 10,
-        time: `PM 1${index}:00`,
-        event: "自驾游",
-        place: "三峡"
-      });
+      let index = Math.round(Math.random() * 8)
+      let item = this.datas[index]
+      item.id = 'id' + +new Date()
+      console.log(item.id)
+      this.datas.unshift(item)
+      console.log(this.datas)
     },
     goPullto() {
       this.$router.push({path: '/pullto'});
+    },
+    goLoading() {
+      this.$router.push({path: '/loading'});
     }
   },
   beforeCreate() {

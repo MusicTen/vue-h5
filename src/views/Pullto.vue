@@ -1,27 +1,35 @@
 
 <template>
-  <div class="news">
+  <div class="lists">
+    <BScroll id="scroll" :data="BSLists" :pullup="true" :pulldown="true" :listenScroll="true" :beforeScroll="true">
+      <ul class="slide-group">
+        <li class="slide-item" v-for="(item, index) in BSLists" :key="index">{{ item }}</li>  
+      </ul>
+    </BScroll>
     <MiniRefresh id="minirefresh"
       ref="minirefresh"
       :options="options"
       @pullingDown="onPullingDown"
       @pullingUp="onPullingUp">
       <ul slot="content">
-        <li v-for="(item, index) in navLists" :key="index">{{item}}</li>
+        <li v-for="(item, index) in navLists" :key="index">{{ item }}</li>
       </ul>
     </MiniRefresh>
   </div>
 </template>
 <script>
 import MiniRefresh from "@/components/content/Minirefresh"
+import BScroll from "@/components/content/BScroll/Scroll"
 export default {
   name: 'Pullto',
   components: {
-    MiniRefresh
+    MiniRefresh,
+    BScroll
   },
   data() {
     return {
-      navLists: ["热点", "时政", "军事", "数码", "汽车", "娱乐", "国际", "地方", "笑话", "图片", "人文", "历史", "影视", "直播", "旅游"],
+      navLists: ['热点', '时政', '军事', '数码', '汽车', '娱乐', '国际', '地方', '笑话', '图片', '人文', '历史', '影视', '直播', '旅游'],
+      BSLists: ['热点', '时政', '军事', '数码', '汽车', '娱乐', '国际', '地方', '笑话', '图片', '人文', '历史', '影视', '直播', '旅游'],
       options: {
         container: '#minirefresh',
         up: {
@@ -52,9 +60,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.news {
+.lists {
+  overflow: hidden;
+  #minirefresh,
+  #scroll {
+    width: 50%;
+    height: 100Vh;
+    float: left;
+    position: relative;
+  }
+  #minirefresh {
+    float: right;
+  }
   ul {
-    // padding: 0 40px;
     li {
       width: 100%;
       height: 100px;
@@ -69,6 +87,9 @@ export default {
       &:nth-child(odd) {
         background-color: pink;
       }
+    }
+    li:last-child {
+      margin-bottom: 0;
     }
   }
 }

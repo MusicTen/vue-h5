@@ -14,7 +14,7 @@
             <p>{{sub.concernNum}}{{sub.concernType}}关注</p>
           </div>
         </div>
-        <div class="content">
+        <div class="post-content">
           <h5>{{sub.title}}</h5>
           <p>{{sub.summary}}</p>
           <ul>
@@ -144,7 +144,7 @@ export default {
     }
   }
 }
-.content {
+.post-content {
   padding: 0 15px;
   font-size: 30px;
   h5 {
@@ -203,8 +203,8 @@ export default {
   background-color: #fafafa;
   font-size: 28px;
   .zan {
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     margin-bottom: 10px;
     span:first-child {
       width: 80px;

@@ -7,21 +7,23 @@
 </template>
 
 <script>
-// 默认主题
-import "minirefresh/dist/debug/minirefresh.css";
 import MiniRefreshTools from "minirefresh";
-// // 引入淘宝主题
+import "minirefresh/dist/debug/minirefresh.css";
+// 引入默认主题
+import 'minirefresh/dist/debug/themes/default/minirefresh.theme.default.js';
+import 'minirefresh/dist/debug/themes/default/minirefresh.theme.default.css';
+// 引入淘宝主题
 // import 'minirefresh/dist/debug/themes/taobao/minirefresh.theme.taobao.js';
 // import 'minirefresh/dist/debug/themes/taobao/minirefresh.theme.taobao.css';
-// // 引入类微信主题
+// 引入类微信主题
 // import 'minirefresh/dist/debug/themes/applet/minirefresh.theme.applet.js';
 // import 'minirefresh/dist/debug/themes/applet/minirefresh.theme.applet.css';
-// // 引入drawer3d主题
+// 引入drawer3d主题
 // import 'minirefresh/dist/debug/themes/drawer3d/minirefresh.theme.drawer3d.js';
 // import 'minirefresh/dist/debug/themes/drawer3d/minirefresh.theme.drawer3d.css';
 // 引入drawerslider主题
-import 'minirefresh/dist/debug/themes/drawerslider/minirefresh.theme.drawerslider.js';
-import 'minirefresh/dist/debug/themes/drawerslider/minirefresh.theme.drawerslider.css';
+// import 'minirefresh/dist/debug/themes/drawerslider/minirefresh.theme.drawerslider.js';
+// import 'minirefresh/dist/debug/themes/drawerslider/minirefresh.theme.drawerslider.css';
 
 const COMPONENT_NAME = "minirefrsh";
 
@@ -34,9 +36,7 @@ export default {
     },
     options: {
       type: Object,
-      default: function() {
-        return {};
-      }
+      default: null
     }
   },
   data() {
@@ -53,7 +53,7 @@ export default {
   methods: {
     initMiniRefresh() {
       // 暂时处理深复制
-      this.miniRefresh = new MiniRefreshTools.theme.drawerslider(
+      this.miniRefresh = new MiniRefreshTools.theme.defaults(
         Object.assign(this.options, {
           down: Object.assign(this.options.down || {}, {
             callback: () => {

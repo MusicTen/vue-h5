@@ -101,16 +101,16 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 100px 10px 0;
+  padding: 110px 10px 0;
   input {
     width: 80%;
-    height: 80px;
-    line-height: 80px;
+    height: 70px;
+    line-height: 70px;
     border: 2px solid rgb(190, 190, 190);
     font-size: 30px;
     border-radius: 40px;
     outline: none;
-    padding-left: 20px;
+    padding-left: 40px;
     &::-webkit-input-placeholder { /* WebKit browsers */
       color: rgb(190, 190, 190);
       font-size: 24px;
@@ -137,14 +137,14 @@ export default {
     img {
       width: 180px;
       height: 120px;
-      margin-right: 5px;
+      margin-right: 10px;
     }
     .aside {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       p {
-        font-size: 28px;
+        font-size: 26px;
         display: flex;
         justify-content: space-between;
         color: #999;

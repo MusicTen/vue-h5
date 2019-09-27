@@ -10,10 +10,10 @@
         secondaryColor: String - The color of the pulser.
         animate: Boolean - Whether or not to display the pulser.
       -->
-      <InstagramLoader :animate="false"></InstagramLoader>
+      <InstagramLoader :animate="false" />
     </div>
     <div v-else>
-      <Acircle :data="datas" :isDetail="true"/>
+      <Acircle :data="datas" :isDetail="true" />
     </div>
   </div>
 </template>

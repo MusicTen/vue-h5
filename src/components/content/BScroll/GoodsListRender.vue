@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-list-render-view">
+  <div class="goodslist">
     <div class="scroll-wrapper">
       <div ref="scroll" class="scroll">
         <ul class="foods-wrapper">
@@ -80,7 +80,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .goods-list-render-view{
+  .goodslist{
     width: 100%;
     height: 100%;
     .scroll-wrapper{

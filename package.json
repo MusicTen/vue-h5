@@ -11,6 +11,7 @@
     "better-scroll": "^1.15.1",
     "countup.js": "^2.0.4",
     "echarts": "^4.2.1",
+    "html2canvas": "^1.0.0-rc.3",
     "minirefresh": "^2.0.2",
     "pixi.js-legacy": "^5.1.0",
     "velocity-animate": "^1.5.2",
