@@ -3,6 +3,7 @@
     <div class="main" ref="imageTofile">
       <h5>我的logo</h5>
       <img src="../assets/img/logo.png" alt="">
+      <img :src="imgUrl" alt="">
     </div>
     <img class="draw" :src="htmlUrl" />
     <a class="download" :href="htmlUrl" download="">下载分享</a>
@@ -14,7 +15,8 @@ import html2canvas from "html2canvas"
 export default {
   data() {
     return {
-      htmlUrl: 'http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg'
+      imgUrl: 'http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg',
+      htmlUrl: ''
     }
   },
   mounted() {
