@@ -295,6 +295,7 @@
 .container {
   text-align: center;
   background-color: #000;
+  box-sizing: border-box;
 }
 section {
   width: 30%;
@@ -302,7 +303,7 @@ section {
   text-align: center;
   min-height: 215px;
   vertical-align: top;
-  margin: 1%;
+  margin: .9%;
   background: #080915;
   border-radius: 5px;
   box-shadow: 0px 0px 30px 1px #103136 inset;

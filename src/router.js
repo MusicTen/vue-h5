@@ -87,9 +87,14 @@ export default new Router({
       component: () => import('@/views/Loading.vue')
     },
     {
-      path: '/test',
-      name: 'test',
-      component: () => import('@/views/Test.vue')
+      path: '/pixi',
+      name: 'pixi',
+      component: () => import('@/views/Pixi.vue')
+    },
+    {
+      path: '/canvas',
+      name: 'canvas',
+      component: () => import('@/views/Canvas.vue')
     },
     {
       path: '*',

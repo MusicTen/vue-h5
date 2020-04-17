@@ -1,20 +1,23 @@
 <template>
   <div>
-    <div id="gaugeContainer" style="width:100%; height:8rem"></div>
+    <div id="radar" style="width:100%; height:6rem"></div>
   </div>
 </template>
         
 <script>
-const echarts = require("echarts");
+// 引入 ECharts 主模块
+var echarts = require('echarts/lib/echarts');
+// 引入雷达图
+// require("./lib/chart/radar");
 // 导入数据
-import { option } from "../../assets/js/option-guage";
+import { option } from "../../assets/js/option-radar";
 export default {
-  name: "Guage",
+  name: "Radar",
   data() {
     return {};
   },
   mounted() {
-    let myChart = echarts.init(document.getElementById("gaugeContainer"));
+    let myChart = echarts.init(document.getElementById("radar"));
     myChart.setOption(option);
   }
 };

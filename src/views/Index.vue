@@ -13,11 +13,13 @@
       <div class="swiper-button-next"></div>
     </div>
     <BSlider :lists="carLists"></BSlider>
+    <!-- <v-distpicker province="广东省" city="广州市" area="海珠区"></v-distpicker> -->
     <Footer :index="0"></Footer>
   </div>
 </template>
 <script>
 import Swiper from "swiper";
+// import VDistpicker from 'v-distpicker'
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import Slider from "@/components/content/Slider.vue";
@@ -27,7 +29,8 @@ export default {
     Header,
     Footer,
     Slider,
-    BSlider
+    BSlider,
+    // VDistpicker
   },
   data() {
     return {
