@@ -97,6 +97,11 @@ export default new Router({
       component: () => import('@/views/Canvas.vue')
     },
     {
+      path: '/turntable',
+      name: 'turntable',
+      component: () => import('@/views/Turntable.vue')
+    },
+    {
       path: '*',
       name: 'nofind',
       component: () => import('@/views/NoFind.vue')

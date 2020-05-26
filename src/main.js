@@ -8,7 +8,7 @@ import '@/assets/js/flexible'
 import VueLazyload from 'vue-lazyload'
 
 import './assets/css/base.css' // 引入基础css文件，重置样式
-import 'swiper/dist/css/swiper.css'
+import 'swiper/css/swiper.min.css'
 
 Vue.use(VueLazyload)
 
