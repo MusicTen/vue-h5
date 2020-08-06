@@ -10,6 +10,7 @@
         <div class="swiper-slide" v-for="(item, index) in tips" :key="index">{{ item }}</div>
       </div>
     </div>
+		<text-scroll :dataList="tips"></text-scroll>
 		<h3 class="hot">热门推荐</h3>
 		<div class="content">
 			<transition-group
@@ -45,10 +46,11 @@
 <script>
 import Swiper from 'swiper'
 import Header from '@/components/common/Header'
+import TextScroll from '@/components/content/TextScroll'
 import Velocity from 'velocity-animate'
 export default {
 	components: {
-		Header
+		Header, TextScroll
 	},
 	data() {
 		return {

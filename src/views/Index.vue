@@ -15,6 +15,10 @@
     <BSlider :lists="carLists"></BSlider>
     <!-- <v-distpicker province="广东省" city="广州市" area="海珠区"></v-distpicker> -->
     <Footer :index="0"></Footer>
+    <vue-draggable-resizable :w="100" :h="100" v-on:dragging="onDrag" :parent="true">
+      <p>Hello! I‘m a flexible component. You can drag me around and you can resize me.<br>
+      X: {{ x }} / Y: {{ y }} - Width: {{ width }} / Height: {{ height }}</p>
+    </vue-draggable-resizable>
   </div>
 </template>
 <script>
@@ -24,6 +28,7 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import Slider from "@/components/content/Slider.vue";
 import BSlider from "@/components/content/BScroll/BSlider.vue";
+import VueDraggableResizable from 'vue-draggable-resizable'
 export default {
   components: {
     Header,
@@ -31,6 +36,7 @@ export default {
     Slider,
     BSlider,
     // VDistpicker
+    VueDraggableResizable
   },
   data() {
     return {
@@ -45,7 +51,11 @@ export default {
         require("../assets/img/car/plan4.jpg"),
         require("../assets/img/car/plan4.jpg")
       ],
-      scroll: null
+      scroll: null,
+      width: 0,
+      height: 0,
+      x: 0,
+      y: 0
     }
   },
   beforeCreate() {
@@ -75,6 +85,10 @@ export default {
           prevEl: '.swiper-button-prev',
         }
       }) 
+    },
+    onDrag(x, y) {
+      this.x = x
+      this.y = y
     }
   },
   destroyed() {
